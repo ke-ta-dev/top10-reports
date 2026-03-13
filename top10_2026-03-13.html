@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日のTOP10 - 2026-03-13</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    line-height: 1.7;
+}
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border-radius: 0 0 24px 24px;
+    margin-bottom: 40px;
+}
+.header h1 {
+    font-size: 2rem;
+    background: linear-gradient(90deg, #e74c3c, #f39c12, #e74c3c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: gradient 3s ease infinite;
+    margin-bottom: 8px;
+}
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.header .date {
+    color: #8892b0;
+    font-size: 0.95rem;
+}
+
+/* Section */
+.section-title {
+    font-size: 1.3rem;
+    color: #ccd6f6;
+    padding: 16px 0 12px;
+    border-bottom: 2px solid #233554;
+    margin: 40px 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.section-title .emoji { font-size: 1.4rem; }
+
+/* Entry Card */
+.entry {
+    background: #112240;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    border: 1px solid #233554;
+    transition: transform 0.2s;
+}
+.entry:hover { transform: translateY(-2px); }
+
+.entry-hero {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.entry-body { padding: 20px 24px; }
+
+.entry-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+.entry-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    font-weight: bold;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+.category-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+}
+.brand-country {
+    font-size: 0.8rem;
+    color: #8892b0;
+}
+
+.entry-title {
+    font-size: 1.15rem;
+    color: #ccd6f6;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.entry-section {
+    margin-bottom: 16px;
+}
+.entry-section-label {
+    font-size: 0.75rem;
+    color: #64ffda;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+.entry-section-text {
+    font-size: 0.9rem;
+    color: #a8b2d1;
+    line-height: 1.8;
+}
+.actionable-list {
+    list-style: none;
+    padding: 0;
+}
+.actionable-list li {
+    font-size: 0.85rem;
+    color: #a8b2d1;
+    padding: 4px 0 4px 20px;
+    position: relative;
+    line-height: 1.7;
+}
+.actionable-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #64ffda;
+}
+.source-link {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 14px;
+    background: #233554;
+    border-radius: 8px;
+    color: #64ffda;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+}
+.source-link:hover { background: #2d4a6f; }
+
+/* Bonus */
+.bonus {
+    background: #1a1a2e;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-left: 3px solid #f39c12;
+}
+.bonus-title { color: #ccd6f6; font-weight: 600; font-size: 0.95rem; }
+.bonus-summary { color: #8892b0; font-size: 0.85rem; margin-top: 4px; }
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #495670;
+    font-size: 0.8rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>今日のTOP10</h1>
+        <p class="date">2026-03-13 | Creative Director's Pick</p>
+    </div>
+
+    <div class="section-title"><span class="emoji">🌍</span> 海外 TOP</div>
+
+    <div class="entry" id="entry-1">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1504711434969-e33886168d6c?w=600&h=400&fit=crop" alt="NPR、56年の歴史で初めてロゴを「問い」に変える" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">1</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">NPR / アメリカ</span>
+            </div>
+            <div class="entry-title">NPR、56年の歴史で初めてロゴを「問い」に変える</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">NPRが「For Your Right to Be Curious」キャンペーンを展開。ロゴの「NPR」を「Who」「How」「Why」に置き換え、ワシントンDC本社看板・NYタイムズ全面広告・全米ビルボードで一斉掲出。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">公共メディアへの予算削減が政治問題化するなか、「好奇心を持つ権利」という普遍的な価値を掲げることで政治的対立を超えた共感を獲得。56年間一度も変えなかったロゴを変えたという「禁じ手」の衝撃がSNSで爆発的な話題を生み出した。ロゴのアイコニックさが「文字を変えてもNPRだとわかる」という認知の強さを逆手に取った巧みな手法。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>自社ロゴやアイコンを「一時的に変える」ことで、ブランドの認知強度をテストしつつ話題化する手法を検討</li>
+<li>広告費ゼロ（プロボノ＋媒体社の無償提供）でも国民的議論を喚起できる「大義ドリブン」の設計</li>
+<li>「変えない」ものを「変える」という行為自体をニュースにするPR戦略</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://adage.com/creativity/work/aa-npr-who-how-why-for-your-right-to-be-curious/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-2">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&h=400&fit=crop" alt="Dove「r/eal reviews」：Redditの辛辣レビューをそのまま広告に" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">2</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">Dove（Unilever） / アメリカ</span>
+            </div>
+            <div class="entry-title">Dove「r/eal reviews」：Redditの辛辣レビューをそのまま広告に</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">DoveがRedditユーザーに匿名で正直なレビューを依頼。ネガティブ評価も含む最初の50件を、NY・フラットアイロンプラザのポップアップやOOH、デジタル広告にそのまま掲出した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「企業は都合の良いレビューしか使わない」という消費者の不信感を逆手に取り、ネガティブ評価も含めた「ラディカルな透明性」で信頼を構築。Redditの匿名文化・忖度なしの口コミを広告フォーマットに昇華させた点が、インフルエンサーマーケティングへの疲れを感じる層に刺さった。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>自社商品のネガティブレビューを「あえて」活用する「透明性マーケティング」の設計</li>
+<li>Reddit・X・口コミサイトなどの匿名UGCを広告クリエイティブの素材として正式活用</li>
+<li>ポップアップ×OOH×デジタルの同時展開で、オンラインの声をオフラインに可視化する</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.adweek.com/creativity/dove-turns-brutally-honest-reddit-reviews-into-an-unfiltered-campaign/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-3">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1541348263662-e068662d82af?w=600&h=400&fit=crop" alt="Ford、F1復帰を「ストリーミング時代のドキュメンタリー広告」で展開" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">3</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">Ford / アメリカ</span>
+            </div>
+            <div class="entry-title">Ford、F1復帰を「ストリーミング時代のドキュメンタリー広告」で展開</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Fordが20年ぶりのF1復帰に合わせ、Apple TV上でCM枠を「マイクロ・ドキュシリーズ」に変換。実在のFordエンジニアを主役に据え、F1マシンの技術と市販車の開発をつなぐストーリーを展開。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">Apple TVの「シーケンシャル広告」機能を活用し、30秒CMの羅列ではなく「次のCM枠で物語が続く」構造を実現。俳優やCGI不使用、実在のエンジニアのみという真正性がF1ファンの「本物志向」と合致。全世界統一プラットフォーム「Ready Set Ford」の一環として12チャネルで同一メッセージを異なる文脈で展開する設計も秀逸。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>ストリーミングプラットフォームの「シーケンシャル広告」を活用して、CM枠を物語に変える</li>
+<li>社内の技術者やクリエイターを「主役」にするドキュメンタリースタイルの広告制作</li>
+<li>スポーツイベントのスポンサーシップを「練習・予選から」確保し、露出頻度を最大化</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.adweek.com/creativity/ford-returns-to-f1-with-a-docuseries-that-disrupts-the-ad-break/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-4">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=600&h=400&fit=crop" alt="Gucci、ラグジュアリー初のSnapchat AI Lensを展開" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">4</span>
+                <span class="category-badge" style="background:#27ae60">Tools/Workflow</span>
+                <span class="brand-country">Gucci / イタリア</span>
+            </div>
+            <div class="entry-title">Gucci、ラグジュアリー初のSnapchat AI Lensを展開</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Gucciがラグジュアリーブランドとして世界初となるSnapchatのSponsored AI Lensを展開。生成AIでユーザー自身が「La Famiglia」コレクションのキャラクターに変身できる体験を配信。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">従来のARフィルター（アクセサリーを重ねる）ではなく、生成AIによる「完全な画像変換」でユーザーをGucciの世界観に没入させた。ラグジュアリーブランドが「スナチャ世代」とのタッチポイントを本気で構築し始めた象徴的な事例。日次インプレッションが25-45%増加する実績も後押し。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>Snapchat/Instagram/TikTokのAR/AIフィルターを活用した「体験型ブランド広告」の検討</li>
+<li>ブランドの世界観を「着せ替え」ではなく「変身」として体験させるクリエイティブ設計</li>
+<li>中東・欧州など地域ごとにローンチ市場を絞り話題性と希少性を維持する</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://newsroom.snap.com/gucci-sponsored-ai-lens" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-5">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="HelloFresh、ウォータールー駅に「透明な巨大段ボール」を出現させる" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">5</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">HelloFresh / ドイツ</span>
+            </div>
+            <div class="entry-title">HelloFresh、ウォータールー駅に「透明な巨大段ボール」を出現させる</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">HelloFreshがロンドン・ウォータールー駅に巨大な配達ボックス型インスタレーションを設置。日中は透明なPixelGlassでカウントダウンを表示し、夕方に実際の家族が中で食事を準備・共有する様子を公開。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">通勤者の「夕食どうしよう」というペインポイントを駅というコンテキストで直撃。日中は期待感を煽り、夕方のリビール（家族の食事シーン）で感情的なピークを作る「時間差演出」が秀逸。D2Cブランドのリアル体験シフトのお手本。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>「時間帯」によって見え方が変わるOOH/インスタレーションの設計</li>
+<li>通勤導線上のペインポイント（夕食・疲労・退屈）をターゲットにした体験型広告</li>
+<li>「覗き見」したくなる透明素材やリビール要素で、受動的なOOHを能動的な体験に変える</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.thegonetwork.com/articles/the-best-marketing-campaigns-of-2026---monthly-review-2026" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-6">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=400&fit=crop" alt="Nike x LEGO、Air Max 95のLEGOセットを同日発売" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">6</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">Nike x LEGO / アメリカ x デンマーク</span>
+            </div>
+            <div class="entry-title">Nike x LEGO、Air Max 95のLEGOセットを同日発売</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Nike x LEGOの複数年パートナーシップ第2弾として、LEGO Nike Air Max 95セット（1,213ピース）が3月28日発売予定。実物のLEGOコラボAir Max 95スニーカーも同日発売。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「スポーツxクリエイティブプレイ」という両ブランドの交差点を、プロダクト自体がメディアになる形で具現化。スニーカーとLEGOセットの「同日発売」はコレクター層とファミリー層の両方を同時に取り込む。WHO調査の「子供の5人に1人しか十分な運動をしていない」という課題をベースにした社会的大義も背景に。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>コラボ商品の「同日発売」で相互送客とSNS話題化を最大化する戦略</li>
+<li>「組み立てる」「カスタムする」など参加型の体験をプロダクトに内包させる</li>
+<li>社会的大義（子供の遊び・運動推進）をパートナーシップの物語に組み込む</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://about.nike.com/en/newsroom/releases/nike-lego-partnership-official-experience-product-details" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-7">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=400&fit=crop" alt="McDonald's「All Flavour, No Mess」：ソースの快楽と不快を両立" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">7</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">McDonald's / グローバル</span>
+            </div>
+            <div class="entry-title">McDonald's「All Flavour, No Mess」：ソースの快楽と不快を両立</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">McDonald'sが「All Flavour, No Mess」キャンペーンを展開。ソースたっぷりのメニューへの愛と、べたつく手やテーブルの不快感という消費者のジレンマを正面から認め、ユーモラスに解決策を提示。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">消費者の行動における矛盾（ソースが好きx手が汚れるのが嫌）を「あるある」として可視化し、共感と笑いを同時に獲得。機能的メッセージをエモーショナルな文脈で包むことで、ファストフード広告の差別化に成功。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>自社商品の「愛されている弱点」を正直に認めてクリエイティブの起点にする</li>
+<li>「あるある」ネタをSNSコンテンツ→マスキャンペーンに昇華させるパイプライン構築</li>
+<li>機能訴求をユーモアで包むことで、広告回避層にもリーチする</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.trendhunter.com/slideshow/march-2026-marketing" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-8">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e?w=600&h=400&fit=crop" alt="Pepsi「Relation-Sips」：Z世代の恋愛観を小さなジェスチャーで再定義" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">8</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">Pepsi / イギリス・アイルランド</span>
+            </div>
+            <div class="entry-title">Pepsi「Relation-Sips」：Z世代の恋愛観を小さなジェスチャーで再定義</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">PepsiがUK・アイルランドで「Relation-Sips」キャンペーンを展開。壮大なロマンチックジェスチャーよりも日常の小さな思いやりを通じてZ世代の新しい恋愛規範を描いた。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">Z世代の恋愛観が「グランドジェスチャー」から「マイクロケア」へ移行しているという文化的インサイトを的確に捉えた。ペプシという飲料を「関係性の中の小さな思いやりのツール」として再定義し、機能的価値を超えた感情的ポジショニングを実現。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>世代別の価値観シフト（Z世代の恋愛観・友情観・消費観）を定期的にリサーチしクリエイティブに反映</li>
+<li>自社商品を「日常の小さな瞬間」の象徴として描く「スモールモーメント」マーケティング</li>
+<li>特定市場での先行展開でテストし、グローバル展開の判断材料にする</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.thegonetwork.com/articles/the-best-marketing-campaigns-of-2026---monthly-review-2026" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-9">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop" alt="Dove「Hot Like Us」：2000年代ノスタルジアでグラミー賞をジャック" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">9</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">Dove（Unilever） / アメリカ</span>
+            </div>
+            <div class="entry-title">Dove「Hot Like Us」：2000年代ノスタルジアでグラミー賞をジャック</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Doveが2026年グラミー賞に合わせて「Hot Like Us」キャンペーンを展開。2000年代初頭のノスタルジアをフックにリニューアルしたデオドラント製品を訴求し、エンタメxビューティーのクロスオーバーを実現。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">Y2Kリバイバルが継続するカルチャートレンドとグラミーの放送タイミングを正確にマッチ。「r/eal reviews」と同時期にDoveブランド全体で「本物の声xノスタルジア」という二重の感情レイヤーを構築し、ブランドの統一感と多面性を両立させている。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>大型文化イベント（音楽賞・映画祭・スポーツイベント）に合わせたモーメントマーケティングの計画</li>
+<li>ノスタルジアをトリガーにした感情的接点の設計（Y2K・90年代など世代ごとの活用）</li>
+<li>複数キャンペーンを同時期に展開する際の「ブランドストーリーの一貫性」設計</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.trendhunter.com/slideshow/march-2026-marketing" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-10">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=600&h=400&fit=crop" alt="Coors Light「Chill Face Roller」：意図的スペルミスでReddit・LinkedInをハック" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">10</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">Coors Light / アメリカ</span>
+            </div>
+            <div class="entry-title">Coors Light「Chill Face Roller」：意図的スペルミスでReddit・LinkedInをハック</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Coors Lightが遊び心のある「Chill Face Roller」デバイスを発表し、ウェブサイト上で意図的なスペルミスラベルを掲載。この仕掛けがRedditとLinkedInで瞬く間にバイラル化。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「間違い」を見つけて共有したくなる人間心理を巧みに利用。SNS上で「これ見つけた？」という発見の共有欲を刺激し、ユーザー自身が自発的に拡散エンジンとなった。低コストで高いエンゲージメントを実現するゲリラマーケティングの好例。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>意図的な「間違い」や「違和感」をフックにした発見型バイラルコンテンツの設計</li>
+<li>Reddit・LinkedInなどプラットフォームごとの拡散メカニズムを理解した配置戦略</li>
+<li>ユーザーが「教えたくなる」「共有したくなる」心理を起点にしたキャンペーン設計</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.storychief.io/blog/recent-innovative-marketing-campaigns" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="section-title"><span class="emoji">⚡</span> ボーナス: 注目の動き</div>
+
+    <div class="bonus">
+        <div class="bonus-title">Liquid Death x Ozzy Osbourne — Infinite Ozzy</div>
+        <div class="bonus-summary">OzzyのDNA入りアイスティー缶を$450で限定販売。「プロダクトxアートxスペクタクル」の境界を溶かすマーケティングの極北。</div>
+    </div>
+
+    <div class="bonus">
+        <div class="bonus-title">Stella Artois（トロント） — 降雪リアルタイムOOH</div>
+        <div class="bonus-summary">記録的な降雪をリアルタイムOOHに転換。天候という「アンコントローラブル」をクリエイティブに変える好例。</div>
+    </div>
+
+    <div class="bonus">
+        <div class="bonus-title">Visit Oslo — 自虐観光キャンペーン</div>
+        <div class="bonus-summary">自国の首都を「行く価値があるのか？」と自虐的に問いかけるキャンペーンが世界的にバイラル。オーセンティシティが最強のバイラルドライバーであることを証明。</div>
+    </div>
+
+    <div class="footer">
+        Generated on 2026-03-13 10:19 | Creative Director's Daily Brief
+    </div>
+</div>
+</body>
+</html>
