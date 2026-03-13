@@ -210,6 +210,103 @@ body {
 .bonus-title { color: #ccd6f6; font-weight: 600; font-size: 0.95rem; }
 .bonus-summary { color: #8892b0; font-size: 0.85rem; margin-top: 4px; }
 
+/* Awards */
+.awards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.award-card {
+    background: #112240;
+    border-radius: 12px;
+    padding: 16px 20px;
+    border: 1px solid #233554;
+    transition: transform 0.2s;
+}
+.award-card:hover { transform: translateY(-1px); }
+.award-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+.award-tier {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.tier-major { background: #e74c3c; color: white; }
+.tier-mid { background: #f39c12; color: #1a1a2e; }
+.tier-niche { background: #233554; color: #8892b0; }
+.award-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ccd6f6;
+}
+.award-cycle {
+    font-size: 0.7rem;
+    color: #495670;
+    margin-left: auto;
+}
+.award-latest {
+    font-size: 0.85rem;
+    color: #a8b2d1;
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+.award-latest strong {
+    color: #64ffda;
+    font-weight: 600;
+}
+.award-notable {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0;
+}
+.award-notable li {
+    font-size: 0.8rem;
+    color: #8892b0;
+    padding: 2px 0 2px 16px;
+    position: relative;
+}
+.award-notable li::before {
+    content: "·";
+    position: absolute;
+    left: 4px;
+    color: #64ffda;
+    font-weight: bold;
+}
+.award-pending {
+    color: #495670;
+    font-style: italic;
+}
+.award-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.75rem;
+    color: #64ffda;
+    text-decoration: none;
+}
+.award-link:hover { text-decoration: underline; }
+.awards-tier-section {
+    margin-bottom: 20px;
+}
+.awards-tier-label {
+    font-size: 0.8rem;
+    color: #8892b0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 0;
+    border-bottom: 1px solid #1a2744;
+    margin-bottom: 12px;
+}
+
 /* Footer */
 .footer {
     text-align: center;
@@ -228,6 +325,7 @@ body {
     <div class="tabs">
         <div class="tab active" data-tab="overseas">🌍 海外<span class="tab-count">10</span></div>
         <div class="tab" data-tab="domestic">🇯🇵 国内<span class="tab-count">10</span></div>
+        <div class="tab" data-tab="awards">🏆 受賞<span class="tab-count">24</span></div>
         <div class="tab" data-tab="bonus">⚡ ボーナス<span class="tab-count">3</span></div>
     </div>
     <div class="tab-panel active" id="panel-overseas">
@@ -914,6 +1012,471 @@ body {
         </div>
     </div>
     </div>
+    <div class="tab-panel" id="panel-awards">
+        <div class="awards-tier-section">
+            <div class="awards-tier-label" style="font-size:1rem;border-bottom:2px solid #233554;padding-bottom:10px;margin-bottom:16px">🇯🇵 国内の広告賞</div>
+            <div style="margin-bottom:12px"><span style="font-size:0.75rem;color:#64ffda;font-weight:600">🥇 主要</span></div>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-major">主要</span>
+                        <span class="award-name">ACC賞</span>
+                        <span class="award-cycle">10月</span>
+                    </div>
+                    <div class="award-latest"><strong>第65回 (2025)</strong> 大塚製薬 ボディメンテ「THE DAY #C105」（フィルム部門 5年連続）</div>
+                    <ul class="award-notable">
+                        <li>赤城乳業 ソフ（フィルム部門グランプリ）</li>
+                        <li>三井住友銀行 Olive（フィルム部門グランプリ）</li>
+                        <li>カロリーメイト「それぞれの音色」（ACCゴールド）</li>
+                    </ul>
+                    <div class="entry-section" style="margin-top:12px">
+                        <div class="entry-section-label">何が起きたか</div>
+                        <div class="entry-section-text">ボディメンテ「THE DAY #C105」がフィルム部門で5年連続グランプリという前人未踏の記録を達成。赤城乳業ソフと三井住友銀行Oliveもグランプリを獲得し、「生活者のリアルな瞬間」を捉えたクリエイティブが複数部門を席巻した。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">なぜ効いたか</div>
+                        <div class="entry-section-text">ボディメンテは「アスリートの一瞬」を映画的手法で切り取るスタイルを5年間一貫して進化させ続けたことが評価された。赤城乳業ソフは商品の食感を音と映像で「共感覚的」に表現する手法が新鮮。Oliveは金融サービスをライフスタイルブランドとして再定義するクリエイティブアプローチが、従来の銀行広告の常識を覆した。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">真似できる要素</div>
+                        <ul class="actionable-list">
+                            <li>ブランドの「シリーズ戦略」を5年単位で設計し、毎年の進化を審査員に印象づける長期クリエイティブ計画</li>
+                            <li>食品・飲料の広告では「共感覚（味→音→映像）」の変換を起点にしたクリエイティブ開発</li>
+                            <li>金融・BtoBサービスのブランディングを「ライフスタイル文脈」で再構築する手法</li>
+                        </ul>
+                    </div>
+                    <a class="award-link" href="https://www.acc-awards.com/festival/2025fes_result/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-major">主要</span>
+                        <span class="award-name">TCC賞</span>
+                        <span class="award-cycle">12月</span>
+                    </div>
+                    <div class="award-latest award-pending">2025 — 発表待ち</div>
+                    <a class="award-link" href="https://www.tcc.gr.jp/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-major">主要</span>
+                        <span class="award-name">ADC賞</span>
+                        <span class="award-cycle">4月</span>
+                    </div>
+                    <div class="award-latest award-pending">2025 — 発表待ち（2026年4月予定）</div>
+                    <a class="award-link" href="https://www.tokyoadc.com/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-major">主要</span>
+                        <span class="award-name">朝日広告賞</span>
+                        <span class="award-cycle">7月</span>
+                    </div>
+                    <div class="award-latest award-pending">第74回 — 発表待ち（2026年7月予定）</div>
+                    <a class="award-link" href="https://www.asahi-aaa.com/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-major">主要</span>
+                        <span class="award-name">日経広告賞</span>
+                        <span class="award-cycle">10月</span>
+                    </div>
+                    <div class="award-latest award-pending">第74回 (2025) — 確認中</div>
+                    <a class="award-link" href="https://marketing.nikkei.com/adawards/" target="_blank">公式サイト →</a>
+                </div>
+            </div>
+            <div style="margin-bottom:12px"><span style="font-size:0.75rem;color:#64ffda;font-weight:600">🥈 中規模</span></div>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-mid">中規模</span>
+                        <span class="award-name">日本宣伝賞</span>
+                        <span class="award-cycle">3月発表 / 5月贈賞</span>
+                    </div>
+                    <div class="award-latest"><strong>第13回 (2025)</strong> 松下賞: 井上礼之氏</div>
+                    <ul class="award-notable">
+                        <li>正力賞: 一力雅彦氏</li>
+                        <li>吉田賞: 谷喜久郎氏</li>
+                        <li>山名賞: 奥村靫正氏</li>
+                    </ul>
+                    <div class="entry-section" style="margin-top:12px">
+                        <div class="entry-section-label">何が起きたか</div>
+                        <div class="entry-section-text">ダイキン工業会長・井上礼之氏が松下賞を受賞。「空調の技術力」を長年にわたりブランドコミュニケーションに昇華させ、BtoBからBtoCへのブランド認知拡大を牽引した功績が評価された。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">なぜ効いたか</div>
+                        <div class="entry-section-text">製造業・BtoBブランドが宣伝活動を通じて「一般消費者にも知られる企業」へと変革するプロセスが、広告業界全体の模範として高く評価された。経営トップ自らがブランドコミュニケーションにコミットする姿勢が継続的成果を生んだ。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">真似できる要素</div>
+                        <ul class="actionable-list">
+                            <li>BtoB企業のブランディングでは経営層のコミットメントを明示的に組み込む長期戦略が有効</li>
+                            <li>「技術力→生活価値」への翻訳をコミュニケーションの軸に据え、BtoC認知を段階的に拡大</li>
+                            <li>業界の功労賞への推薦・エントリーを経営戦略の一部として計画的に行う</li>
+                        </ul>
+                    </div>
+                    <a class="award-link" href="https://koubo.jp/article/35347" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-mid">中規模</span>
+                        <span class="award-name">マーケティング大賞</span>
+                        <span class="award-cycle">5月</span>
+                    </div>
+                    <div class="award-latest"><strong>第17回 (2025)</strong> アサヒビール「未来のレモンサワー」</div>
+                    <ul class="award-notable">
+                        <li>量産化の困難を乗り越えた世界初のレモンスライス入りチューハイ</li>
+                    </ul>
+                    <div class="entry-section" style="margin-top:12px">
+                        <div class="entry-section-label">何が起きたか</div>
+                        <div class="entry-section-text">アサヒビール「未来のレモンサワー」がマーケティング大賞を受賞。缶の中にレモンスライスが入っている世界初のRTDで、技術的に不可能とされた量産化を実現。発売後即座に品薄状態となりSNSでも大きな話題に。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">なぜ効いたか</div>
+                        <div class="entry-section-text">「レモンサワーにレモンが入っていない」という当たり前の不満を解決する商品イノベーションそのものがマーケティングのコアに。技術的ブレイクスルーのストーリーがメディア露出を自然に獲得し、パッケージが「見せたくなる」SNS投稿を誘発。商品力×物語×ビジュアルの三位一体が完成形。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">真似できる要素</div>
+                        <ul class="actionable-list">
+                            <li>「当たり前の不満」をリスト化し、技術で解決できるものがないか社内R&Dと棚卸しする</li>
+                            <li>開発ストーリー自体をPR素材として設計し、商品発売前からメディアリレーションを構築</li>
+                            <li>「中が見える」「開けたら驚く」など開封体験をSNS投稿の起点として設計するパッケージ戦略</li>
+                        </ul>
+                    </div>
+                    <a class="award-link" href="https://markezine.jp/article/detail/49086" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-mid">中規模</span>
+                        <span class="award-name">PRアワード</span>
+                        <span class="award-cycle">12月</span>
+                    </div>
+                    <div class="award-latest"><strong>2025</strong> 石川県「能登半島地震 命を守る災害対応リアルタイム広報」</div>
+                    <ul class="award-notable">
+                        <li>ゴールド: 金龍製麺「道頓堀 金龍のしっぽプロジェクト」</li>
+                    </ul>
+                    <div class="entry-section" style="margin-top:12px">
+                        <div class="entry-section-label">何が起きたか</div>
+                        <div class="entry-section-text">石川県の能登半島地震における災害対応リアルタイム広報がグランプリを受賞。発災直後からSNS・テレビ・防災無線を統合した情報発信体制を構築し、避難行動を直接促進した広報活動が最高評価を獲得。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">なぜ効いたか</div>
+                        <div class="entry-section-text">「命を守る」という究極の目的に向けて、広報の速度・正確性・チャネル横断の統合力が問われた。平時からの危機対応マニュアルとSNS運用体制の準備が、有事に即座に機能した点が高く評価された。PRが「ブランディング」ではなく「社会インフラ」として機能した好例。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">真似できる要素</div>
+                        <ul class="actionable-list">
+                            <li>危機管理PRのマニュアルを平時に策定し、年1回以上の実地訓練を実施する</li>
+                            <li>自治体・企業のSNSアカウントを「有事の情報インフラ」として位置づけ、平時からフォロワー数と信頼性を構築</li>
+                            <li>災害対応のPR事例を自社の危機管理コミュニケーション設計に応用する</li>
+                        </ul>
+                    </div>
+                    <a class="award-link" href="https://prsj.or.jp/news/newsreleasepraward2025/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-mid">中規模</span>
+                        <span class="award-name">宣伝会議賞</span>
+                        <span class="award-cycle">3月</span>
+                    </div>
+                    <div class="award-latest award-pending">第63回 (2026) — 発表待ち（2026年3月上旬予定）</div>
+                    <a class="award-link" href="https://senden.co/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-mid">中規模</span>
+                        <span class="award-name">CM好感度</span>
+                        <span class="award-cycle">毎月</span>
+                    </div>
+                    <div class="award-latest"><strong>2026年2月度</strong> 日清食品チキンラーメン（2ヶ月連続1位 / timeleszひよこ組出演）</div>
+                    <ul class="award-notable">
+                        <li>日清食品がワン・ツー独占</li>
+                        <li>日本マクドナルドが上位常連</li>
+                    </ul>
+                    <div class="entry-section" style="margin-top:12px">
+                        <div class="entry-section-label">何が起きたか</div>
+                        <div class="entry-section-text">日清食品チキンラーメンがCM好感度で2ヶ月連続1位を獲得。timeleszメンバーが「ひよこ組」としてCMに出演し、「ポポポン ポン スポポン」のフレーズが耳に残るキャッチーなCMが視聴者の心を掴んだ。日清食品はワン・ツー独占という驚異的な結果。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">なぜ効いたか</div>
+                        <div class="entry-section-text">日清食品のCM戦略は一貫して「ツッコミどころの設計」にある。視聴者が「なにこれ」と思い、SNSで共有したくなる仕掛けを毎回仕込む。timeleszの起用もファン層の拡散力を計算した上で、CM自体がSNSコンテンツとして機能する構造を作り出している。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">真似できる要素</div>
+                        <ul class="actionable-list">
+                            <li>CM制作時に「SNSで語られるフック」を意図的に3つ以上仕込む設計プロセスを導入</li>
+                            <li>CM好感度調査のデータを月次でウォッチし、自社・競合のクリエイティブトレンドを定点観測</li>
+                            <li>タレント起用は「ファンの拡散力」を定量評価した上で、CMフォーマットとの相性で判断する</li>
+                        </ul>
+                    </div>
+                    <a class="award-link" href="https://www.cmdb.jp/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-mid">中規模</span>
+                        <span class="award-name">Gマーク</span>
+                        <span class="award-cycle">10月</span>
+                    </div>
+                    <div class="award-latest"><strong>2025年度</strong> ベスト100発表済（コミュニケーション部門含む）</div>
+                    <a class="award-link" href="https://www.g-mark.org/" target="_blank">公式サイト →</a>
+                </div>
+            </div>
+            <div style="margin-bottom:12px"><span style="font-size:0.75rem;color:#64ffda;font-weight:600">🥉 専門</span></div>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-niche">専門</span>
+                        <span class="award-name">DM大賞</span>
+                        <span class="award-cycle">3月</span>
+                    </div>
+                    <div class="award-latest"><strong>第40回 (2026)</strong> 恵比寿ワインマート「バイヤー認知でファンを獲得！ROAS179%のDM」</div>
+                    <ul class="award-notable">
+                        <li>購入率11.7%を記録した休眠DM</li>
+                    </ul>
+                    <div class="entry-section" style="margin-top:12px">
+                        <div class="entry-section-label">何が起きたか</div>
+                        <div class="entry-section-text">恵比寿ワインマートが「バイヤー認知」を軸にしたDM施策でグランプリを受賞。ワインバイヤーの顔と推薦コメントを前面に出したパーソナルなDMがROAS179%、購入率11.7%という驚異的な成果を記録。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">なぜ効いたか</div>
+                        <div class="entry-section-text">デジタル全盛の時代に「紙のDM」が高い成果を上げた理由は、「誰が選んだか」という人の顔が見える信頼性。ECでは得られない「バイヤーとの擬似的な関係性」をDMというフィジカルメディアで構築。休眠顧客の再活性化という明確なKPIに対して、ROASで定量的に効果を証明した点も評価された。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">真似できる要素</div>
+                        <ul class="actionable-list">
+                            <li>デジタル施策が飽和する中、フィジカルDMの「開封率の高さ」を再評価し、CRM施策に組み込む</li>
+                            <li>「人の顔が見える」コンテンツ（バイヤー推薦・スタッフレビュー）をDM・メール・SNSで横展開</li>
+                            <li>休眠顧客へのアプローチはROASを事前にKPI設定し、テスト→スケールの手順で実行</li>
+                        </ul>
+                    </div>
+                    <a class="award-link" href="https://www.dm-award.jp/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-niche">専門</span>
+                        <span class="award-name">BOVA</span>
+                        <span class="award-cycle">5月</span>
+                    </div>
+                    <div class="award-latest award-pending">2026 — 発表待ち（2026年5月予定）</div>
+                    <a class="award-link" href="https://bova.sendenkaigi.com/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-niche">専門</span>
+                        <span class="award-name">交通広告GP</span>
+                        <span class="award-cycle">6月</span>
+                    </div>
+                    <div class="award-latest award-pending">2025 — 確認中</div>
+                    <a class="award-link" href="https://www.train-media.net/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-niche">専門</span>
+                        <span class="award-name">販促コンペ</span>
+                        <span class="award-cycle">12月</span>
+                    </div>
+                    <div class="award-latest"><strong>第17回 (2025)</strong> KEAN Health 遺伝子検査chatGENE Pro企画（YANG HYUCKSOO他）</div>
+                    <ul class="award-notable">
+                        <li>ゴールド: 富士フイルム 写真入り年賀状企画</li>
+                    </ul>
+                    <div class="entry-section" style="margin-top:12px">
+                        <div class="entry-section-label">何が起きたか</div>
+                        <div class="entry-section-text">KEAN Healthの遺伝子検査サービス「chatGENE Pro」の販促企画がグランプリを獲得。遺伝子検査という高関与商材の初回体験ハードルを、チャット型UIと段階的な情報開示で劇的に下げた企画が高く評価された。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">なぜ効いたか</div>
+                        <div class="entry-section-text">ヘルスケア×テクノロジーという領域で、消費者の「知りたいけど怖い」という心理的障壁を、チャットボットの会話形式で自然に乗り越えさせる設計が秀逸。販促施策が「売り込み」ではなく「体験のデザイン」として機能した好例。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">真似できる要素</div>
+                        <ul class="actionable-list">
+                            <li>高関与・高不安商材の販促では「段階的な情報開示」で心理的ハードルを分解する設計を採用</li>
+                            <li>チャットUI・対話形式のLP設計で、ユーザーの疑問を一つずつ解消しながらCVに導く導線を構築</li>
+                            <li>販促コンペの受賞作を自社の販促企画のベンチマークとして年次で分析する習慣を組織化</li>
+                        </ul>
+                    </div>
+                    <a class="award-link" href="https://awardg.sendenkaigi.com/hansoku/" target="_blank">公式サイト →</a>
+                </div>
+            </div>
+        </div>
+        <div class="awards-tier-section">
+            <div class="awards-tier-label" style="font-size:1rem;border-bottom:2px solid #233554;padding-bottom:10px;margin-bottom:16px">🌍 海外の広告賞</div>
+            <div style="margin-bottom:12px"><span style="font-size:0.75rem;color:#64ffda;font-weight:600">🥇 主要</span></div>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-major">主要</span>
+                        <span class="award-name">カンヌライオンズ</span>
+                        <span class="award-cycle">6月</span>
+                    </div>
+                    <div class="award-latest"><strong>2025</strong> 日本勢はグランプリ獲得ならず</div>
+                    <ul class="award-notable">
+                        <li>複数のゴールド・シルバー受賞（日本代理店）</li>
+                    </ul>
+                    <div class="entry-section" style="margin-top:12px">
+                        <div class="entry-section-label">何が起きたか</div>
+                        <div class="entry-section-text">2025年のカンヌライオンズでは日本勢はグランプリに届かなかったものの、複数のゴールド・シルバーを獲得。グローバルではAI活用クリエイティブやソーシャルインパクト系キャンペーンが高く評価される傾向が続いた。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">なぜ効いたか</div>
+                        <div class="entry-section-text">グランプリ受賞作に共通するのは「テクノロジー×社会課題」の掛け合わせ。単なるクラフト力ではなく、クリエイティビティが社会にどれだけインパクトを与えたかが審査基準の中心に。日本勢は実行力では評価されたが、グローバルイシューへの接続が課題として浮き彫りに。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">真似できる要素</div>
+                        <ul class="actionable-list">
+                            <li>カンヌ攻略には「ローカルのインサイト×グローバルなイシュー」の接続が鍵</li>
+                            <li>AI・データ活用のクリエイティブ事例を自社でも実験し、応募ポートフォリオに組み込む</li>
+                            <li>受賞作の分析を社内ワークショップ化し、グローバル審査基準のトレンドを組織的に学習する</li>
+                        </ul>
+                    </div>
+                    <a class="award-link" href="https://www.campaignjapan.com/article/カンヌライオンズ2025/503278" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-major">主要</span>
+                        <span class="award-name">Clio Awards</span>
+                        <span class="award-cycle">5月</span>
+                    </div>
+                    <div class="award-latest"><strong>2026 (Clio Music発表済 / 本賞は5月)</strong> Clio Music: Bad Bunny「Tracking Bad Bunny」(DDB Latina) 3部門制覇 / Kraft Heinz「Mustard x Mustard」統合部門</div>
+                    <ul class="award-notable">
+                        <li>DDB Latina Puerto Rico がClio Music Agency of the Year</li>
+                        <li>本賞のGrand Clio発表は5月12日予定</li>
+                    </ul>
+                    <div class="entry-section" style="margin-top:12px">
+                        <div class="entry-section-label">何が起きたか</div>
+                        <div class="entry-section-text">Clio Music部門でBad Bunnyの「Tracking Bad Bunny」がDDB Latina制作で3部門Grand Clioを制覇。Kraft Heinzの「Mustard x Mustard」は音楽と食品ブランドの統合キャンペーンとして評価された。DDB Latina Puerto RicoがAgency of the Yearに選出。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">なぜ効いたか</div>
+                        <div class="entry-section-text">「Tracking Bad Bunny」はアーティストのファンダム（熱狂的ファン層）をブランドの拡散装置として活用する手法を極限まで洗練させた。音楽とブランドの境界を溶かし、「広告なのにエンタメ」という体験を生み出した。ラテンアメリカ発のクリエイティブが世界を席巻する潮流も象徴。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">真似できる要素</div>
+                        <ul class="actionable-list">
+                            <li>音楽アーティストとのコラボは「曲を使う」だけでなく「ファンダムを巻き込む体験設計」まで踏み込む</li>
+                            <li>ラテンアメリカ・東南アジアなど新興市場のクリエイティブトレンドを定期的にウォッチする</li>
+                            <li>食品×音楽など異業種コラボレーションの企画をClio等の審査基準を意識して設計する</li>
+                        </ul>
+                    </div>
+                    <a class="award-link" href="https://clios.com/press-article/2026-grand-clio-music-award-winners-announced/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-major">主要</span>
+                        <span class="award-name">D&AD</span>
+                        <span class="award-cycle">5月</span>
+                    </div>
+                    <div class="award-latest award-pending">2026 — 発表待ち（2026年5月20日予定）</div>
+                    <a class="award-link" href="https://www.dandad.org/awards/d-ad-awards" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-major">主要</span>
+                        <span class="award-name">One Show</span>
+                        <span class="award-cycle">5月</span>
+                    </div>
+                    <div class="award-latest award-pending">2026 — 発表待ち（2026年5月15日 Creative Week）</div>
+                    <a class="award-link" href="https://oneshow.org/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-major">主要</span>
+                        <span class="award-name">Webby Awards</span>
+                        <span class="award-cycle">5月</span>
+                    </div>
+                    <div class="award-latest award-pending">第30回 (2026) — 発表待ち（ノミネー: 3月末発表 / 受賞: 5月）</div>
+                    <a class="award-link" href="https://www.webbyawards.com/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-major">主要</span>
+                        <span class="award-name">Effie Awards</span>
+                        <span class="award-cycle">地域別</span>
+                    </div>
+                    <div class="award-latest"><strong>Effie India 2026（発表済）</strong> Nestle India がGrand Effie & Client of the Year / Leo India がAgency of the Year</div>
+                    <ul class="award-notable">
+                        <li>22 Gold, 43 Silver, 55 Bronze, 188 Finalist</li>
+                        <li>Effie US・Europe・APACは発表待ち</li>
+                    </ul>
+                    <div class="entry-section" style="margin-top:12px">
+                        <div class="entry-section-label">何が起きたか</div>
+                        <div class="entry-section-text">Effie India 2026でNestle IndiaがGrand Effie＆Client of the Yearをダブル受賞。Leo IndiaがAgency of the Yearを獲得。全体で22ゴールドを含む300超のエントリーから成果を厳選。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">なぜ効いたか</div>
+                        <div class="entry-section-text">Effieは「効果」を最重視する賞であり、Nestleの受賞はインド市場での継続的なマーケティングROI改善と市場シェア拡大が数字で証明されたことが決め手。FMCGブランドがデジタル×リテール統合で圧倒的な成果を出し続ける「インドモデル」が世界の注目を集めている。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">真似できる要素</div>
+                        <ul class="actionable-list">
+                            <li>Effie受賞作の「効果測定フレームワーク」を自社のキャンペーン評価に導入する</li>
+                            <li>インド市場のデジタルマーケティング事例を定期的にベンチマークし、新興市場戦略に活用</li>
+                            <li>「クリエイティブ」と「効果」を同時に追求するための社内評価指標（Effie基準）を設計する</li>
+                        </ul>
+                    </div>
+                    <a class="award-link" href="https://www.storyboard18.com/brand-makers/effie-india-awards-2026-winners-full-list-leo-india-tops-agencies-nestle-leads-clients-89693.htm" target="_blank">公式サイト →</a>
+                </div>
+            </div>
+            <div style="margin-bottom:12px"><span style="font-size:0.75rem;color:#64ffda;font-weight:600">🥈 中規模</span></div>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-mid">中規模</span>
+                        <span class="award-name">ADFEST</span>
+                        <span class="award-cycle">3月</span>
+                    </div>
+                    <div class="award-latest"><strong>2026</strong> 来週発表（3月19-21日 パタヤ開催）</div>
+                    <ul class="award-notable">
+                        <li>アジア太平洋地域最大級のクリエイティビティ・フェスティバル</li>
+                        <li>結果は3月21日以降に判明</li>
+                    </ul>
+                    <a class="award-link" href="https://www.adfest.com/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-mid">中規模</span>
+                        <span class="award-name">World Creative Rankings</span>
+                        <span class="award-cycle">3月</span>
+                    </div>
+                    <div class="award-latest"><strong>2026（発表済）</strong> 最優秀キャンペーン: Spotify「Spreadbeats」(FCB New York)</div>
+                    <ul class="award-notable">
+                        <li>FCB New Yorkが世界No.1エージェンシー</li>
+                        <li>AXA「Three Words」(Publicis Conseil) が4位</li>
+                        <li>Essity「Never Just a Period」(AMV BBDO) が5位</li>
+                        <li>22の主要アワードプログラム、2,278キャンペーンを分析</li>
+                    </ul>
+                    <div class="entry-section" style="margin-top:12px">
+                        <div class="entry-section-label">何が起きたか</div>
+                        <div class="entry-section-text">Spotifyの「Spreadbeats」がFCB New York制作で2026年世界最優秀キャンペーンに選出。22の主要アワードプログラム、2,278キャンペーンの受賞実績を統合分析したランキングでトップを獲得。FCB New Yorkが世界No.1エージェンシーに。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">なぜ効いたか</div>
+                        <div class="entry-section-text">「Spreadbeats」はSpotifyのデータアセット（楽曲ストリーミングデータ）をクリエイティブの起点に変換した点が革新的。プラットフォーム企業が持つ独自データを「広告素材」ではなく「カルチャーコンテンツ」として世界に発信するアプローチが、複数の審査基準で横断的に評価された。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">真似できる要素</div>
+                        <ul class="actionable-list">
+                            <li>自社が保有するユニークデータ（購買・行動・利用データ）をクリエイティブの素材として再解釈するワークショップを実施</li>
+                            <li>World Creative Rankingsの年次分析を自社クリエイティブチームの「世界標準ベンチマーク」として活用</li>
+                            <li>複数アワードで横断的に評価される企画を目指し、エントリー戦略を複数賞に分散させる</li>
+                        </ul>
+                    </div>
+                    <a class="award-link" href="https://www.thedrum.com/news/world-creative-rankings-2026-spotify-s-spreadbeats-is-the-most-awarded-campaign" target="_blank">公式サイト →</a>
+                </div>
+            </div>
+            <div style="margin-bottom:12px"><span style="font-size:0.75rem;color:#64ffda;font-weight:600">🥉 専門</span></div>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-niche">専門</span>
+                        <span class="award-name">Spikes</span>
+                        <span class="award-cycle">3月</span>
+                    </div>
+                    <div class="award-latest award-pending">2026 — 発表待ち</div>
+                    <a class="award-link" href="https://www.spikes.asia/" target="_blank">公式サイト →</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="tab-panel" id="panel-bonus">
 
     <div class="bonus">
@@ -933,7 +1496,7 @@ body {
     </div>
 
     <div class="footer">
-        Generated on 2026-03-13 12:03 | Creative Director's Daily Brief
+        Generated on 2026-03-13 13:04 | Creative Director's Daily Brief
     </div>
 </div>
 <script>
