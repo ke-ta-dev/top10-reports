@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日のTOP10 - 2026-03-17</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    line-height: 1.7;
+}
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 60px 20px 30px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border-radius: 0 0 24px 24px;
+    margin-bottom: 0;
+}
+.header h1 {
+    font-size: 2rem;
+    background: linear-gradient(90deg, #e74c3c, #f39c12, #e74c3c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: gradient 3s ease infinite;
+    margin-bottom: 8px;
+}
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.header .date {
+    color: #8892b0;
+    font-size: 0.95rem;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #0a0a0a;
+    border-bottom: 2px solid #233554;
+    margin-bottom: 24px;
+    padding-top: 16px;
+}
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #495670;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.tab:hover { color: #8892b0; }
+.tab.active {
+    color: #ccd6f6;
+    border-bottom-color: #e74c3c;
+}
+.tab .tab-count {
+    display: inline-block;
+    background: #233554;
+    color: #8892b0;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 1px 7px;
+    border-radius: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+.tab.active .tab-count {
+    background: #e74c3c;
+    color: white;
+}
+.tab-panel {
+    display: none;
+}
+.tab-panel.active {
+    display: block;
+}
+
+/* Entry Card */
+.entry {
+    background: #112240;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    border: 1px solid #233554;
+    transition: transform 0.2s;
+}
+.entry:hover { transform: translateY(-2px); }
+
+.entry-hero {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.entry-body { padding: 20px 24px; }
+
+.entry-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+.entry-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    font-weight: bold;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+.category-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+}
+.brand-country {
+    font-size: 0.8rem;
+    color: #8892b0;
+}
+
+.entry-title {
+    font-size: 1.15rem;
+    color: #ccd6f6;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.entry-section {
+    margin-bottom: 16px;
+}
+.entry-section-label {
+    font-size: 0.75rem;
+    color: #64ffda;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+.entry-section-text {
+    font-size: 0.9rem;
+    color: #a8b2d1;
+    line-height: 1.8;
+}
+.actionable-list {
+    list-style: none;
+    padding: 0;
+}
+.actionable-list li {
+    font-size: 0.85rem;
+    color: #a8b2d1;
+    padding: 4px 0 4px 20px;
+    position: relative;
+    line-height: 1.7;
+}
+.actionable-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #64ffda;
+}
+.source-link {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 14px;
+    background: #233554;
+    border-radius: 8px;
+    color: #64ffda;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+}
+.source-link:hover { background: #2d4a6f; }
+
+/* Bonus */
+.bonus {
+    background: #1a1a2e;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-left: 3px solid #f39c12;
+}
+.bonus-title { color: #ccd6f6; font-weight: 600; font-size: 0.95rem; }
+.bonus-summary { color: #8892b0; font-size: 0.85rem; margin-top: 4px; }
+
+/* Awards */
+.awards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.award-card {
+    background: #112240;
+    border-radius: 12px;
+    padding: 16px 20px;
+    border: 1px solid #233554;
+    transition: transform 0.2s;
+}
+.award-card:hover { transform: translateY(-1px); }
+.award-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+.award-tier {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.tier-major { background: #e74c3c; color: white; }
+.tier-mid { background: #f39c12; color: #1a1a2e; }
+.tier-niche { background: #233554; color: #8892b0; }
+.award-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ccd6f6;
+}
+.award-cycle {
+    font-size: 0.7rem;
+    color: #495670;
+    margin-left: auto;
+}
+.award-latest {
+    font-size: 0.85rem;
+    color: #a8b2d1;
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+.award-latest strong {
+    color: #64ffda;
+    font-weight: 600;
+}
+.award-notable {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0;
+}
+.award-notable li {
+    font-size: 0.8rem;
+    color: #8892b0;
+    padding: 2px 0 2px 16px;
+    position: relative;
+}
+.award-notable li::before {
+    content: "·";
+    position: absolute;
+    left: 4px;
+    color: #64ffda;
+    font-weight: bold;
+}
+.award-pending {
+    color: #495670;
+    font-style: italic;
+}
+.award-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.75rem;
+    color: #64ffda;
+    text-decoration: none;
+}
+.award-link:hover { text-decoration: underline; }
+.awards-tier-section {
+    margin-bottom: 20px;
+}
+.awards-tier-label {
+    font-size: 0.8rem;
+    color: #8892b0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 0;
+    border-bottom: 1px solid #1a2744;
+    margin-bottom: 12px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #495670;
+    font-size: 0.8rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>今日のTOP10</h1>
+        <p class="date">2026-03-17 | Creative Director's Pick</p>
+    </div>
+    <div class="tabs">
+        <div class="tab active" data-tab="overseas">🌍 海外<span class="tab-count">10</span></div>
+        <div class="tab" data-tab="domestic">🇯🇵 国内<span class="tab-count">10</span></div>
+        <div class="tab" data-tab="awards">🏆 受賞<span class="tab-count">24</span></div>
+        <div class="tab" data-tab="bonus">⚡ ボーナス<span class="tab-count">3</span></div>
+    </div>
+    <div class="tab-panel active" id="panel-overseas">
+
+    <div class="entry" id="entry-1">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop" alt="Liquid Death×オジー・オズボーンのDNAを缶に封印した仰天スタント" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">1</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">Liquid Death / アメリカ</span>
+            </div>
+            <div class="entry-title">Liquid Death×オジー・オズボーンのDNAを缶に封印した仰天スタント</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Liquid Deathがオジー・オズボーンのDNAサンプルを実際の缶に混入させた限定アイスティーを発売。缶にはDNA証明書付きQRコードを印刷し、ロック伝説との結びつきを製品そのものに宿らせた仰天スタントが世界中で70万回超インプレッションを獲得した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">デスメタル缶水ブランドのDNAとロックの神様オジーのDNAが文字通り融合。生成AIが席巻する時代に「生物学的リアル」という稀少性を武器にし、ブランドらしさと話題性を同時に最大化した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>コラボのコンセプトを「比喩」ではなく「字義通り」に実行できないか問い直す</li>
+<li>製品自体を証明書・物語の媒体にすることで購買動機を高める</li>
+<li>ブランドの核心的価値（反骨精神）とコラボ相手の世界観を完全一致させる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://storychief.io/blog/recent-innovative-marketing-campaigns" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-2">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d4?w=600&h=400&fit=crop" alt="PRクライシスをグウィネス・パルトローで笑いに変えたAstronomer" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">2</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">Astronomer / アメリカ</span>
+            </div>
+            <div class="entry-title">PRクライシスをグウィネス・パルトローで笑いに変えたAstronomer</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">データ基盤スタートアップAstronomerがシステム障害後、Ryan ReynoldsのMaximum Effort制作でグウィネス・パルトローをスポークスパーソンに起用。「障害への関心をありがとう」と自虐するPR動画がYouTubeで70万回超再生された。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">危機対応の定石「謝罪と沈黙」を真逆に覆し、ユーモアで先手を打った。Maximum Effort流の自己認識的ウィットが専門メディアと一般層双方の話題をさらい、BtoB企業が一夜でカルチャー的文脈を手に入れた。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>クライシスを「弱点を見せる機会」に変えるユーモア戦略を事前に準備しておく</li>
+<li>BtoB企業こそポップカルチャーと接続するスポークスパーソン戦略が差別化になる</li>
+<li>自虐コンテンツの24時間以内スピード制作体制を社内に構築する</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://storychief.io/blog/recent-innovative-marketing-campaigns" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-3">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&h=400&fit=crop" alt="Axeがバス停を巨大アーケードゲームに変えた体験型OOH" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">3</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">Axe / イギリス</span>
+            </div>
+            <div class="entry-title">Axeがバス停を巨大アーケードゲームに変えた体験型OOH</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Axeが都市部のバス停を巨大インタラクティブアーケードゲーム機に変貌させるOOHインスタレーションを展開。待ち時間に実際にゲームをプレイでき、その様子をSNS投稿するユーザーが続出して数百万リーチを達成した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「退屈な待ち時間」というペインポイントを遊び場に転換した設計が秀逸。物理空間を体験の起点にしてUGCを自然に生み出す仕組みが広告費対比で圧倒的なリーチ効率を実現した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>待ち時間・移動時間など退屈の瞬間をブランド体験の起点として設計する</li>
+<li>OOHは「見る」から「触る・参加する」に転換するとUGC発生率が大幅に上昇する</li>
+<li>物理インスタレーションは動画撮影前提に設計すれば数点の設置でも全国拡散できる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://storychief.io/blog/recent-innovative-marketing-campaigns" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-4">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=400&fit=crop" alt="Vans 60周年は伝説アーティストを集結させた文化宣言" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">4</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">Vans / アメリカ</span>
+            </div>
+            <div class="entry-title">Vans 60周年は伝説アーティストを集結させた文化宣言</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Vansが創業60周年を記念し、SZA・ヘイリー・ウィリアムス・トラヴィス・バーカーら音楽とスケートカルチャーの象徴を一堂に集めた大型キャンペーンを発表。「自分流にやる」精神を60年の歴史と紐付け次世代への継承を表現した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">数字の節目をただ祝うのではなく、ブランドが体現するカウンターカルチャー精神を代表するアーティスト選びが核心だった。複数カルチャー領域をまたぐ起用でファンベースの掛け算に成功した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>周年キャンペーンは「歴史の振り返り」より「精神の継承」に焦点を当てると若い世代に届く</li>
+<li>複数のカルチャー領域をまたぐアーティスト起用でファンベースの掛け算を狙う</li>
+<li>ブランド価値観を言語化しそれを体現する人物を選ぶコラボ設計のフレームを持つ</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.adweek.com/creativity/ads-of-the-week-march-13-huggies-gap-vans/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-5">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop" alt="Gap×Young Mikoがフルミュージックビデオ広告で春を塗り替えた" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">5</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">Gap / アメリカ</span>
+            </div>
+            <div class="entry-title">Gap×Young Mikoがフルミュージックビデオ広告で春を塗り替えた</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Gapがグラミー賞ノミネートのプエルトリコ人ラッパーYoung Mikoとコラボし、春2026コレクションのフルレングスMV広告を公開。26人のモノクロームダンサーがGapSweatsを着用した「Wassup」新アレンジ映像が大きな話題を呼んだ。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">音楽レーベルのMVと広告の境界を意図的に溶かした点が斬新。Young Mikoのラテン系ファンベースとGapの北米主力顧客層が交差する新客層獲得に成功し、モノクローム演出が春らしさとファッション感度を両立させた。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>広告をコンテンツとして成立させるには30秒CMでなくフルMVフォーマットを検討する</li>
+<li>新興アーティストとの起用は既存ファンベースを超えた新客層開拓の最速ルート</li>
+<li>色彩統一（モノクローム等）はビジュアルの一貫性とプレミアム感を低コストで演出できる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.adweek.com/creativity/ads-of-the-week-march-13-huggies-gap-vans/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-6">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&h=400&fit=crop" alt="NWSL「見逃すことを想像してみて」女子サッカー開幕を席巻した戦略" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">6</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">NWSL / アメリカ</span>
+            </div>
+            <div class="entry-title">NWSL「見逃すことを想像してみて」女子サッカー開幕を席巻した戦略</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">全米女子サッカーリーグNWSLが2026シーズン開幕に合わせ「Imagine Missing This」キャンペーンを展開。タイムズスクエアでデジタルジャックイベントを実施し、女子サッカーの文化的不可欠性を可視化してファンのFOMOを喚起した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「応援してください」でなく「見逃したら損」という消費者心理の反転が新鮮。FOMOを活用したZ世代・ミレニアル層への設計がタイムズスクエアという象徴的な場所での可視化と掛け合わさり既存ファン以外への拡散を後押しした。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>キャンペーンのコアメッセージを「来て」でなく「逃すな」の否定形で構成するとFOMO効果が上がる</li>
+<li>スポーツ・エンタメ開幕は都市の象徴的スポットでのジャック演出がメディア露出を最大化する</li>
+<li>ファン以外にリーチするには「文化への参加コスト」を下げる入口体験を設計する</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://storychief.io/blog/recent-innovative-marketing-campaigns" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-7">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600&h=400&fit=crop" alt="Rolex×ゼンデイヤがアイコンの誕生を語る格調高い物語広告" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">7</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">Rolex / スイス</span>
+            </div>
+            <div class="entry-title">Rolex×ゼンデイヤがアイコンの誕生を語る格調高い物語広告</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Rolexがゼンデイヤを起用した新ブランドキャンペーンを公開。ディズニーチャンネルの子役から世界的カルチャーアイコンへの軌跡を、時間と信頼というRolexの本質的価値と重ね合わせた物語性の高い映像がAd Ageの週間TOP18に選出された。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">単なる有名人起用を超え、ゼンデイヤ自身のキャリアストーリーがブランドのタイムレスな価値観と有機的に結合。若い世代に「Rolexは成功者の時計」でなく「成長の旅の伴走者」として再定義される文脈を作り上げた。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>セレブ起用は「現在の知名度」より「成長物語の共鳴」で選ぶと長期的ブランド価値に繋がる</li>
+<li>ブランド価値（時間・信頼・継続）を人物の実人生のナラティブで体現させる</li>
+<li>若年層への再定義は「若いイメージ」の表層ではなく価値観のリフレームで達成できる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://adage.com/creativity/campaigns-commercials/aa-creative-ads-today-chase-loreal-paris-mazda-mcdonalds-old-spice-rolex-tiffany-uber/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-8">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=600&h=400&fit=crop" alt="Heinz「見覚えがある」ロゴなしでブランド認知を証明するキャンペーン" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">8</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">Heinz / イギリス</span>
+            </div>
+            <div class="entry-title">Heinz「見覚えがある」ロゴなしでブランド認知を証明するキャンペーン</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Heinzが「Looks Familiar」キャンペーンでブランドロゴを表示せず赤いケチャップボトルのシルエットだけで認知を問う広告を世界展開。消費者がロゴなしでHeinzと即座に認識することを実証し、ブランド資産の高さを逆説的に証明した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">ブランドの最大の強みを直接自慢するのではなく消費者自身に「気づかせる」体験設計が秀逸。ロゴなし広告というメディア上の空白が逆にニュースになり、広告費の何十倍ものアーンドメディア露出を獲得した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>高認知ブランドはロゴを外すことで逆にブランド力を証明するキャンペーンが成立する</li>
+<li>「証明」より「体験させる」設計が消費者の能動的な関与とメモリー形成を促進する</li>
+<li>ブランドの一番の強みをメタ化して広告そのものをニュースにする発想を持つ</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://storychief.io/blog/recent-innovative-marketing-campaigns" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-9">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&h=400&fit=crop" alt="Huggiesが赤ちゃん18人に50万ドル相当の高級品を這わせた自信の証明" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">9</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">Huggies / アメリカ</span>
+            </div>
+            <div class="entry-title">Huggiesが赤ちゃん18人に50万ドル相当の高級品を這わせた自信の証明</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Huggiesが食後の赤ちゃん18人を89,000ドルのトルコ絨毯やコンバーチブルカーなど約50万ドル相当の高級品の上に這い回らせる動画広告を公開。「Little Snugglersならどんな状況でも漏れない」という製品自信を究極の方法で実証した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">赤ちゃん×高級品という視覚的インパクトが強烈で「わかった、信用する」という直感的な製品信頼を瞬時に植え付けた。リスクの高さが逆に製品性能への絶対的な自信を物語り、親心を持つ視聴者の笑いと安心感を同時に獲得した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>製品の最大ベネフィットを最も極端なシチュエーションで証明する手法は信頼構築に強力</li>
+<li>安心感の証明は言葉より映像の方が圧倒的に伝わる</li>
+<li>赤ちゃん・ペットなど本能的な注目を集める被写体は広告の視聴完了率を上げる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.adweek.com/creativity/ads-of-the-week-march-13-huggies-gap-vans/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-10">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&h=400&fit=crop" alt="NPRがロゴを反転させて「知る権利」を守る視覚的デモンストレーション" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">10</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">NPR / アメリカ</span>
+            </div>
+            <div class="entry-title">NPRがロゴを反転させて「知る権利」を守る視覚的デモンストレーション</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">米公共放送NPRが政府による公共メディア予算削減の動きに対抗して自社ロゴを逆さにするキャンペーンを開始。「公衆が知る権利を守る」というメッセージを視覚的に象徴化し、Ad Ageのトップ5クリエイティブキャンペーンに選ばれた。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">予算削減という抽象的な政治課題を、誰もが知るNPRロゴを反転させるという視覚的一言で表現したシンプルさが秀逸。言論の自由と公共知識へのアクセスという普遍的価値に訴え、幅広い層の共感と議論を喚起した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>ブランドのアイデンティティ（ロゴ等）を変形させること自体がPRのフックになる</li>
+<li>複雑な社会課題はアイコニックな視覚変換ひとつで一般層に届くメッセージになる</li>
+<li>パーパス発信は声明文より「視覚的行動」で示すと拡散力とメモリー形成力が格段に上がる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://adage.com/creativity/campaigns-commercials/aa-best-creative-ads-npr-saucony-graza/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+    </div>
+    <div class="tab-panel" id="panel-domestic">
+
+    <div class="entry" id="entry-11">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&h=400&fit=crop" alt="JR九州キューポちゃん誕生日で沿線回遊を生む周年キャンペーン" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">11</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">JR九州 / 日本</span>
+            </div>
+            <div class="entry-title">JR九州キューポちゃん誕生日で沿線回遊を生む周年キャンペーン</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">3月3日のキューポちゃん誕生日に合わせ、アプリのダウンロード・ログインでポイントプレゼントや限定グッズ配布を実施。2月10日〜3月23日の期間中アプリ会員の沿線エリア回遊を促し、駅周辺の実店舗との連携でリアルとデジタルを繋いだ施策が話題となった。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">マスコットキャラクターの誕生日という「祝う理由」を軸に、アプリ取得〜ログイン〜沿線訪問という行動変容の階段を自然に設計した点が優れている。ゲーミフィケーションとローカル施策の組み合わせで地域密着型の熱量ある参加者を醸成した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>キャラクターや製品の誕生日・記念日を限定性の起点にすることで定期的な接触機会を作れる</li>
+<li>アプリ取得→ログイン→実地訪問という行動の階段をポイント設計で自然に構築する</li>
+<li>地域インフラ企業はアプリとリアル店舗を連携させて沿線経済圏全体の活性化を担える</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://predge.jp/339319/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-12">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="ニールメッド 渋谷スクランブルに花粉症体験ラボを出現させたPR" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">12</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">ニールメッド / 日本</span>
+            </div>
+            <div class="entry-title">ニールメッド 渋谷スクランブルに花粉症体験ラボを出現させたPR</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">花粉症シーズンの3月4〜8日に渋谷スクランブル交差点前で期間限定ポップアップイベント「サイナス・リンスLab.」を開催。洗鼻製品の体験ブースとして機能しながら花粉症の苦しさへの共感コンテンツがSNSで拡散し、認知度向上と初回購入促進を同時に狙った施策となった。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">約4,000万人が悩む花粉症という季節性の課題を、渋谷という国内最大の人流スポットで体験化した設計が的確。「共感から体験、購買へ」の動線が1回のイベントで完結しており教科書的な実地施策として業界内でも評価が高かった。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>シーズナルな困り事に正面から共感するポップアップは短期間でも高い獲得効率を出せる</li>
+<li>体験型イベントは製品カテゴリーが難解なほど百聞は一見効果が大きく機能する</li>
+<li>渋谷スクランブルなど人流最大スポットでの小規模出展もSNS拡散で全国規模のリーチを狙える</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://predge.jp/340512/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-13">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop" alt="SAGAサンライズパーク ユーモアで「平日の遊び場」イメージを逆転させたPR動画" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">13</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">SAGAサンライズパーク / 日本</span>
+            </div>
+            <div class="entry-title">SAGAサンライズパーク ユーモアで「平日の遊び場」イメージを逆転させたPR動画</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">佐賀県の複合スポーツ施設SAGAサンライズパークが平日の利用低迷を課題に、ユーモアあふれる自虐的PR動画を制作・公開。「週末しか来ない施設」という既成概念をコミカルに崩しながら平日利用のメリットを訴求し、地方施設ながら全国的な話題を獲得した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">地方の公共スポーツ施設として珍しく自虐的ユーモアで「フォロワブルなキャラクター」を確立した点が新鮮。SNSでのシェアを前提にした動画設計で予算を超えた拡散効果を引き出した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>課題を正直にユーモアで語ることがPR予算の少ない地方施設・ブランドの最強の武器になる</li>
+<li>自虐的コンテンツはターゲット以外にもシェアされやすく新規層へのリーチに効果的</li>
+<li>公共施設・地方ブランドこそSNS動画に投資することで都市圏の消費者にリーチできる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://predge.jp/340285/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-14">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&h=400&fit=crop" alt="明治ミルクチョコ99周年「時をかける」全世代ノスタルジアキャンペーン" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">14</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">明治 / 日本</span>
+            </div>
+            <div class="entry-title">明治ミルクチョコ99周年「時をかける」全世代ノスタルジアキャンペーン</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">1927年生まれの明治ミルクチョコレートが来年の100周年前夜として「時をかける」をテーマにしたキャンペーンを開始。大正・昭和・平成・令和の各時代を象徴するアイテムを賞品に設定し「やさしさ」というブランドメッセージで全世代への横断的アプローチを展開した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">100年ブランドの資産を「一度きりの大祭」ではなく2年かけて温める戦略が賢明。各時代の記憶と結びついた賞品設計で祖父母から孫世代まで同じ施策でそれぞれ異なる感情的フックを持たせることに成功した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>周年は当年だけでなく前夜祭として複数年かけて積み上げる戦略が効果的</li>
+<li>各時代を象徴するアイテムを賞品化することで全世代にそれぞれ刺さるインセンティブ設計ができる</li>
+<li>「やさしさ」など普遍的ブランド価値は具体的な時代のアイテムで肉付けすることで初めて体感できる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://n2p.co.jp/blog/campaign/campaigntag/maker/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-15">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop" alt="出光興産 パペットCMで複雑な業界用語を親しみに変えるブランド刷新" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">15</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">出光興産 / 日本</span>
+            </div>
+            <div class="entry-title">出光興産 パペットCMで複雑な業界用語を親しみに変えるブランド刷新</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">出光興産が「でびかり」「しゅっこう」など難解な業界用語をパペットキャラクターが愉快に解説するCMシリーズを展開。石油・エネルギー企業の硬いブランドイメージを和らげ、SNSでも「わかりやすい」と好評を博した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">BtoCへの直接接点が少ないエネルギー企業が難しさをユーモアで包むことで大衆的な親近感を獲得した珍しいケース。パペットという低脅威・高愛着の媒介物が情報の受容障壁を下げ、ブランド理解と好感を同時に達成した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>専門性の高い業界ほど「わかりやすさ」への投資がブランド好感度に直結する</li>
+<li>パペット・アニメなど中和的キャラクターはカタい情報を届けるうえで強力なラッパーになる</li>
+<li>社名や業界用語の教育コンテンツ化はSEOとSNSともに低コストで高リーチを狙えるフォーマット</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://predge.jp/334974/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-16">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1534483509719-3feaee7c30da?w=600&h=400&fit=crop" alt="カゴメ×Yahoo!ショッピング 春の最大15%還元で購買エンジンを加速" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">16</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">カゴメ / 日本</span>
+            </div>
+            <div class="entry-title">カゴメ×Yahoo!ショッピング 春の最大15%還元で購買エンジンを加速</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">カゴメがYahoo!ショッピングと連携し、対象商品購入で最大15%のPayPayポイント還元キャンペーンを3月に実施。LINEヤフーのデータを活用したターゲティングで初回購入者の獲得を強化する施策として業界内で注目された。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">食品ECの拡大が続く中、プラットフォームと連携した還元設計が購買ハードルを下げつつPayPayエコシステムの最優先表示を獲得した。食品×ECの親和性を最大化した実学的施策として評価が高い。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>食品ブランドはECプラットフォームとの還元連携で検索から購買への転換率を大幅に改善できる</li>
+<li>15%還元というわかりやすい数字での訴求は初回購入者獲得に特に有効</li>
+<li>プラットフォームのデータとブランドの商品力の掛け算でターゲティング精度を上げる協業を積極的に組む</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://shopping.yahoo.co.jp/promotion/gateway/brand/kagome/campaign/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-17">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop" alt="LINEヤフーフリマ エンタメ×推し活領域の安心取引強化で信頼資本を積む" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">17</span>
+                <span class="category-badge" style="background:#8e44ad">Platform/Policy</span>
+                <span class="brand-country">LINEヤフー / 日本</span>
+            </div>
+            <div class="entry-title">LINEヤフーフリマ エンタメ×推し活領域の安心取引強化で信頼資本を積む</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">LINEヤフーがYahoo!フリマの取引環境を大幅強化し、エンタメ領域（推し活グッズ・限定コレクション等）での安心・お得な取引体験向上を正式発表。購入者保護の拡充と出品者向けインセンティブ設計を同時に打つプラットフォーム戦略が注目を集めた。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">フリマアプリ市場でメルカリが圧倒的シェアを持つ中、「安心」という信頼訴求と「エンタメ×推し活」という熱量高い市場への集中投資で差別化を図った。LINEの既存ユーザーベースを活かした流入強化も同時進行している。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>成熟した競合市場では全般的な改善より特定の熱量高いセグメントへの集中投資が有効</li>
+<li>プラットフォームの信頼向上施策は数字で語れる保護基準を明示することでPR効果が倍増する</li>
+<li>購入者保護と出品者インセンティブを同時強化する両面市場戦略は離脱率低下と新規獲得の両方に効く</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.lycorp.co.jp/ja/news/release/020037/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-18">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&h=400&fit=crop" alt="Dove「リアルレビュー広告」でSNSの本音をメインメッセージにした日本展開" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">18</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">Dove（ユニリーバ） / 日本</span>
+            </div>
+            <div class="entry-title">Dove「リアルレビュー広告」でSNSの本音をメインメッセージにした日本展開</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Doveが「r/eal reviews」キャンペーンの日本展開として実際のユーザーによる本音レビューをそのままCMや屋外広告のコピーに採用。広告のフォーマットで「広告らしくない本音」を届ける手法がSNS上での信憑性を高め日本市場でも高いエンゲージメントを記録した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">消費者がオウンドメディアの広告より第三者レビューを信頼する傾向が強まる中、そのレビューを広告素材にするという逆転の発想が信頼性と話題性を同時に獲得した。「本音を隠さないブランド」としてのDoveのパーソナリティを一貫して強化している。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>既存のカスタマーレビューやSNSコメントを広告コピーとして再活用するコンテンツ戦略はコスト効率が高い</li>
+<li>「不完全な本音」を隠さないことが若年層の信頼獲得において最も効果的なブランドポジションになっている</li>
+<li>プラットフォームのエコシステムと連携した広告制作で広告感を消したバイラル設計が可能</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://predge.jp/339940/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-19">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="ロート製薬 花粉データ連動の動的広告で季節課題を個別解決体験に変換" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">19</span>
+                <span class="category-badge" style="background:#27ae60">Tools/Workflow</span>
+                <span class="brand-country">ロート製薬 / 日本</span>
+            </div>
+            <div class="entry-title">ロート製薬 花粉データ連動の動的広告で季節課題を個別解決体験に変換</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">ロート製薬が花粉シーズン本格化に合わせ、スギ・ヒノキ花粉の飛散状況とユーザーの地域・症状に連動したデジタル広告施策を展開。パーソナライズされたケアアドバイスとともに最適製品を提案するコンテンツマーケティングがLINEとInstagramで高いエンゲージメントを記録した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「花粉症対策を買って」ではなく「今日の自分の症状に対する最適解を教えてくれる」体験設計が購買意向を高めた。気象データとの連動という技術的な差別化が競合の単純な認知広告と明確に差をつけた。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>シーズナル製品はリアルタイムデータ（天気・花粉・気温）と連動した動的広告で購買タイミングを最大化できる</li>
+<li>「買って」より「今日の自分に合っている理由」を語る方が購買転換率が大幅に上昇する</li>
+<li>LINEの友だち追加と季節的なプッシュ通知を組み合わせたCRMは薬・化粧品カテゴリーで特に効果的</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://predge.jp/340512/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-20">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&h=400&fit=crop" alt="サントリー 春限定RTDで「はじまりの乾杯」UGCを5万件超獲得" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">20</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">サントリー / 日本</span>
+            </div>
+            <div class="entry-title">サントリー 春限定RTDで「はじまりの乾杯」UGCを5万件超獲得</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">サントリーが3月限定のクラフトビール・RTD新フレーバーを発売し、卒業式・入学式・送別会シーズンに連動したSNSキャンペーンを展開。「はじまりの乾杯」をキーワードにUGCを募集し1週間で5万件超の投稿を獲得。春の感情的な節目に製品を自然に紐付けることに成功した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">日本特有の卒業・入学という強い感情トリガーに製品の「限定性」と「はじまり」のメッセージを重ねた設計が購買意欲と投稿意欲を同時に刺激した。RTDカテゴリーの春需要を先取りするタイミング戦略も功を奏した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>日本独自の季節行事（卒業・入学・花見）に紐付けた限定品は感情需要と希少性の相乗効果が高い</li>
+<li>UGCキャンペーンのフック言葉は感情的・行動的に自然な言葉を選ぶと投稿率が上がる</li>
+<li>RTD・アルコール飲料の春需要は2〜3月に仕掛け3月末〜4月の消費ピークに向けて積み上げる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.suntory.co.jp/news/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+    </div>
+    <div class="tab-panel" id="panel-awards">
+        <div class="awards-tier-section">
+            <div class="awards-tier-label" style="font-size:1rem;border-bottom:2px solid #233554;padding-bottom:10px;margin-bottom:16px">🇯🇵 国内の広告賞</div>
+            <div style="margin-bottom:12px"><span style="font-size:0.75rem;color:#64ffda;font-weight:600">🥈 中規模</span></div>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-mid">中規模</span>
+                        <span class="award-name">日本宣伝賞</span>
+                        <span class="award-cycle"></span>
+                    </div>
+                    <div class="award-latest award-pending"> — 発表待ち</div>
+                    <a class="award-link" href="https://www.zenkouren.or.jp/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-mid">中規模</span>
+                        <span class="award-name">マーケティング大賞</span>
+                        <span class="award-cycle"></span>
+                    </div>
+                    <div class="award-latest award-pending"> — 発表待ち</div>
+                    <a class="award-link" href="https://www.jma2-jp.org/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-mid">中規模</span>
+                        <span class="award-name">PRアワードGP</span>
+                        <span class="award-cycle"></span>
+                    </div>
+                    <div class="award-latest award-pending"> — 発表待ち</div>
+                    <a class="award-link" href="https://praj.or.jp/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-mid">中規模</span>
+                        <span class="award-name">宣伝会議賞</span>
+                        <span class="award-cycle"></span>
+                    </div>
+                    <div class="award-latest"><strong>第63回宣伝会議賞</strong> グランプリ: 岡本英雄「あの状態からよく立て直せたな。」（ヤマサ醤油課題）— コピーゴールド・映像＆音声ゴールドほか各賞発表</div>
+                    <ul class="award-notable">
+                        <li>応</li>
+                        <li>募</li>
+                        <li>総</li>
+                        <li>数</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>4</li>
+                        <li>,</li>
+                        <li>9</li>
+                        <li>0</li>
+                        <li>9</li>
+                        <li>点</li>
+                        <li>。</li>
+                        <li>授</li>
+                        <li>賞</li>
+                        <li>式</li>
+                        <li>2</li>
+                        <li>0</li>
+                        <li>2</li>
+                        <li>6</li>
+                        <li>年</li>
+                        <li>2</li>
+                        <li>月</li>
+                        <li>1</li>
+                        <li>9</li>
+                        <li>日</li>
+                        <li>。</li>
+                        <li>3</li>
+                        <li>月</li>
+                        <li>1</li>
+                        <li>日</li>
+                        <li>発</li>
+                        <li>売</li>
+                        <li>の</li>
+                        <li>宣</li>
+                        <li>伝</li>
+                        <li>会</li>
+                        <li>議</li>
+                        <li>4</li>
+                        <li>月</li>
+                        <li>号</li>
+                        <li>で</li>
+                        <li>全</li>
+                        <li>結</li>
+                        <li>果</li>
+                        <li>掲</li>
+                        <li>載</li>
+                        <li>。</li>
+                    </ul>
+                    <div class="entry-section" style="margin-top:12px">
+                        <div class="entry-section-label">何が起きたか</div>
+                        <div class="entry-section-text">第63回宣伝会議賞のグランプリは岡本英雄氏の「あの状態からよく立て直せたな。」（ヤマサ醤油「ぱぱっとちゃんとこれ！うまい!!つゆ」課題）が受賞。応募564,909点の中から選ばれたコピーで、2026年2月19日の授賞式で発表された。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">なぜ効いたか</div>
+                        <div class="entry-section-text">消費者が商品に対して持つ「使ったことがある」「懐かしい」という既存記憶を「よく立て直せた」という褒め言葉で肯定し、再購買への感情的な橋渡しを一言で実現している。短いコピーに複数の感情トリガー（共感・安堵・自己肯定）が凝縮されていることが高評価につながった。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">真似できる要素</div>
+                        <ul class="actionable-list">
+                            <li>コピーは商品の説明より「消費者の内側にある感情に名前をつける」発想で書くと記憶に刻まれる</li>
+                            <li>既存ユーザーへの再購買訴求は「あなたの選択は正しかった」という肯定フレームが最も効果的</li>
+                            <li>日常語で意外な組み合わせを作るコピー技法（日常×気づき）は短尺SNS動画のキャプションにも転用できる</li>
+                        </ul>
+                    </div>
+                    <a class="award-link" href="https://www.advertimes.com/20260219/article534343/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-mid">中規模</span>
+                        <span class="award-name">CM好感度</span>
+                        <span class="award-cycle"></span>
+                    </div>
+                    <div class="award-latest"><strong>BRAND OF THE YEAR 2025</strong> 1位: 日清食品「カップヌードル」(2年連続BRAND OF THE YEAR)。2位: Uber Eats Japan「Uber Eats」(2年連続2位)</div>
+                    <ul class="award-notable">
+                        <li>調</li>
+                        <li>査</li>
+                        <li>対</li>
+                        <li>象</li>
+                        <li>:</li>
+                        <li> </li>
+                        <li>2</li>
+                        <li>0</li>
+                        <li>2</li>
+                        <li>4</li>
+                        <li>年</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>月</li>
+                        <li>〜</li>
+                        <li>2</li>
+                        <li>0</li>
+                        <li>2</li>
+                        <li>5</li>
+                        <li>年</li>
+                        <li>1</li>
+                        <li>0</li>
+                        <li>月</li>
+                        <li>放</li>
+                        <li>映</li>
+                        <li>の</li>
+                        <li>全</li>
+                        <li>6</li>
+                        <li>,</li>
+                        <li>5</li>
+                        <li>9</li>
+                        <li>6</li>
+                        <li>銘</li>
+                        <li>柄</li>
+                        <li>・</li>
+                        <li>1</li>
+                        <li>3</li>
+                        <li>,</li>
+                        <li>9</li>
+                        <li>3</li>
+                        <li>7</li>
+                        <li>作</li>
+                        <li>品</li>
+                        <li>。</li>
+                        <li>タ</li>
+                        <li>レ</li>
+                        <li>ン</li>
+                        <li>ト</li>
+                        <li>部</li>
+                        <li>門</li>
+                        <li>で</li>
+                        <li>は</li>
+                        <li>大</li>
+                        <li>谷</li>
+                        <li>翔</li>
+                        <li>平</li>
+                        <li>が</li>
+                        <li>現</li>
+                        <li>役</li>
+                        <li>ア</li>
+                        <li>ス</li>
+                        <li>リ</li>
+                        <li>ー</li>
+                        <li>ト</li>
+                        <li>歴</li>
+                        <li>代</li>
+                        <li>初</li>
+                        <li>の</li>
+                        <li>1</li>
+                        <li>位</li>
+                        <li>獲</li>
+                        <li>得</li>
+                        <li>。</li>
+                        <li>表</li>
+                        <li>彰</li>
+                        <li>式</li>
+                        <li>2</li>
+                        <li>0</li>
+                        <li>2</li>
+                        <li>5</li>
+                        <li>年</li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>月</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>日</li>
+                        <li>イ</li>
+                        <li>イ</li>
+                        <li>ノ</li>
+                        <li>ホ</li>
+                        <li>ー</li>
+                        <li>ル</li>
+                        <li>。</li>
+                    </ul>
+                    <div class="entry-section" style="margin-top:12px">
+                        <div class="entry-section-label">何が起きたか</div>
+                        <div class="entry-section-text">CM総合研究所が「BRAND OF THE YEAR 2025」を発表。東京キー5局放映の約1.4万作品から日清食品「カップヌードル」が年間総合1位を獲得し2年連続の受賞。CANDY TUNEと吉田沙保里を起用した「夏夏SEAFOOD編」が特に高評価。Uber Eats Japanが2年連続2位で追走した。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">なぜ効いたか</div>
+                        <div class="entry-section-text">カップヌードルはZ世代に刺さる現代アーティスト起用と「日清らしい」実験的ユーモアの組み合わせで、長期ブランドが若年層の共感を継続獲得するモデルを示した。コンスタントなCM投下量と毎回話題になる企画力の両輪が年間好感度の頂点を支えた。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">真似できる要素</div>
+                        <ul class="actionable-list">
+                            <li>年間ブランド好感度を制するには一発の話題作でなく複数クリエイティブの継続的なヒット率を高める仕組みが必要</li>
+                            <li>大手食品ブランドでもZ世代アーティスト・スポーツ選手の組み合わせで世代別好感度を最大化できる</li>
+                            <li>CM好感度調査の月次ランキングをKPIに設定し短サイクルのクリエイティブPDCAを回す</li>
+                        </ul>
+                    </div>
+                    <a class="award-link" href="https://prtimes.jp/main/html/rd/p/000000022.000030552.html" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-mid">中規模</span>
+                        <span class="award-name">グッドデザイン賞</span>
+                        <span class="award-cycle"></span>
+                    </div>
+                    <div class="award-latest"><strong>2025年度グッドデザイン賞（第69回）</strong> グッドデザイン大賞（内閣総理大臣賞）:「DLT木造仮設住宅」坂茂建築設計＋株式会社家元＋株式会社長谷川萬治商店 — 能登半島地震被災地向けに解体せず恒久使用できる新型仮設住宅</div>
+                    <ul class="award-notable">
+                        <li>審</li>
+                        <li>査</li>
+                        <li>対</li>
+                        <li>象</li>
+                        <li>5</li>
+                        <li>,</li>
+                        <li>2</li>
+                        <li>2</li>
+                        <li>5</li>
+                        <li>件</li>
+                        <li>か</li>
+                        <li>ら</li>
+                        <li>1</li>
+                        <li>,</li>
+                        <li>6</li>
+                        <li>1</li>
+                        <li>9</li>
+                        <li>件</li>
+                        <li>受</li>
+                        <li>賞</li>
+                        <li>。</li>
+                        <li>受</li>
+                        <li>賞</li>
+                        <li>展</li>
+                        <li>「</li>
+                        <li>G</li>
+                        <li>O</li>
+                        <li>O</li>
+                        <li>D</li>
+                        <li> </li>
+                        <li>D</li>
+                        <li>E</li>
+                        <li>S</li>
+                        <li>I</li>
+                        <li>G</li>
+                        <li>N</li>
+                        <li> </li>
+                        <li>E</li>
+                        <li>X</li>
+                        <li>H</li>
+                        <li>I</li>
+                        <li>B</li>
+                        <li>I</li>
+                        <li>T</li>
+                        <li>I</li>
+                        <li>O</li>
+                        <li>N</li>
+                        <li> </li>
+                        <li>2</li>
+                        <li>0</li>
+                        <li>2</li>
+                        <li>5</li>
+                        <li>」</li>
+                        <li>は</li>
+                        <li>東</li>
+                        <li>京</li>
+                        <li>ミ</li>
+                        <li>ッ</li>
+                        <li>ド</li>
+                        <li>タ</li>
+                        <li>ウ</li>
+                        <li>ン</li>
+                        <li>で</li>
+                        <li>2</li>
+                        <li>0</li>
+                        <li>2</li>
+                        <li>5</li>
+                        <li>年</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>月</li>
+                        <li>1</li>
+                        <li>〜</li>
+                        <li>5</li>
+                        <li>日</li>
+                        <li>開</li>
+                        <li>催</li>
+                        <li>。</li>
+                        <li>大</li>
+                        <li>阪</li>
+                        <li>万</li>
+                        <li>博</li>
+                        <li>「</li>
+                        <li>大</li>
+                        <li>屋</li>
+                        <li>根</li>
+                        <li>リ</li>
+                        <li>ン</li>
+                        <li>グ</li>
+                        <li>」</li>
+                        <li>が</li>
+                        <li>未</li>
+                        <li>来</li>
+                        <li>社</li>
+                        <li>会</li>
+                        <li>デ</li>
+                        <li>ザ</li>
+                        <li>イ</li>
+                        <li>ン</li>
+                        <li>特</li>
+                        <li>別</li>
+                        <li>賞</li>
+                        <li>受</li>
+                        <li>賞</li>
+                        <li>。</li>
+                    </ul>
+                    <div class="entry-section" style="margin-top:12px">
+                        <div class="entry-section-label">何が起きたか</div>
+                        <div class="entry-section-text">2025年度グッドデザイン大賞（内閣総理大臣賞）は建築家・坂茂が手がける「DLT木造仮設住宅」が受賞。能登半島地震の被災地で、従来の仮設住宅と異なり解体せずそのまま恒久住宅として使い続けられるモデルを実現。1,619件の受賞作から最高賞に選ばれた。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">なぜ効いたか</div>
+                        <div class="entry-section-text">「仮設→解体→廃棄」という従来の仮設住宅の常識を覆し、建材・コスト・環境・被災者のコミュニティ継続を同時に解決するデザイン設計が審査員の評価を集めた。社会課題を既存ソリューションの延長でなくシステム自体の再設計で解くアプローチが評価の核心にある。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">真似できる要素</div>
+                        <ul class="actionable-list">
+                            <li>既存の「一時的なもの」を「持続可能なもの」へ転換するデザイン発想は最高賞レベルの評価を得やすい</li>
+                            <li>社会課題への解答は「問題を解く」より「問題の構造を変える」アプローチがグランプリ評価につながる</li>
+                            <li>広告・コミュニケーション分野でも、一時的なキャンペーンでなく恒久的な仕組みを生む設計がクライアントへの提案価値を高める</li>
+                        </ul>
+                    </div>
+                    <a class="award-link" href="https://www.g-mark.org/learn/past-awards/gda-2025/results" target="_blank">公式サイト →</a>
+                </div>
+            </div>
+        </div>
+        <div class="awards-tier-section">
+            <div class="awards-tier-label" style="font-size:1rem;border-bottom:2px solid #233554;padding-bottom:10px;margin-bottom:16px">🌍 海外の広告賞</div>
+            <div style="margin-bottom:12px"><span style="font-size:0.75rem;color:#64ffda;font-weight:600">🥈 中規模</span></div>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-mid">中規模</span>
+                        <span class="award-name">Spikes Asia</span>
+                        <span class="award-cycle"></span>
+                    </div>
+                    <div class="award-latest"><strong>Spikes Asia 2026</strong> TBWA\HAKUHODO「No Smiles」(McDonald's Japan・Creative Effectiveness) ＆「Smart Eye Camera」(OUI Inc.・Innovation) — 日本勢がダブルGP。DENTSU「The Missing Verse」(Zespri・Creative Strategy)、HAKUHODO Gravity/Cabin「Craftman.Ships」(Ships・Industry Craft)も受賞。APAC Agency of the Year: Leo Mumbai</div>
+                    <ul class="award-notable">
+                        <li>イ</li>
+                        <li>ン</li>
+                        <li>ド</li>
+                        <li>が</li>
+                        <li>最</li>
+                        <li>多</li>
+                        <li>4</li>
+                        <li>G</li>
+                        <li>P</li>
+                        <li>獲</li>
+                        <li>得</li>
+                        <li>。</li>
+                        <li>O</li>
+                        <li>g</li>
+                        <li>i</li>
+                        <li>l</li>
+                        <li>v</li>
+                        <li>y</li>
+                        <li> </li>
+                        <li>S</li>
+                        <li>i</li>
+                        <li>n</li>
+                        <li>g</li>
+                        <li>a</li>
+                        <li>p</li>
+                        <li>o</li>
+                        <li>r</li>
+                        <li>e</li>
+                        <li>「</li>
+                        <li>V</li>
+                        <li>a</li>
+                        <li>s</li>
+                        <li>e</li>
+                        <li>l</li>
+                        <li>i</li>
+                        <li>n</li>
+                        <li>e</li>
+                        <li> </li>
+                        <li>V</li>
+                        <li>e</li>
+                        <li>r</li>
+                        <li>i</li>
+                        <li>f</li>
+                        <li>i</li>
+                        <li>e</li>
+                        <li>d</li>
+                        <li>」</li>
+                        <li>4</li>
+                        <li>G</li>
+                        <li>P</li>
+                        <li>。</li>
+                        <li>N</li>
+                        <li>Z</li>
+                        <li>が</li>
+                        <li>「</li>
+                        <li>T</li>
+                        <li>h</li>
+                        <li>e</li>
+                        <li> </li>
+                        <li>M</li>
+                        <li>ā</li>
+                        <li>o</li>
+                        <li>r</li>
+                        <li>i</li>
+                        <li> </li>
+                        <li>R</li>
+                        <li>o</li>
+                        <li>l</li>
+                        <li>l</li>
+                        <li> </li>
+                        <li>C</li>
+                        <li>a</li>
+                        <li>l</li>
+                        <li>l</li>
+                        <li>」</li>
+                        <li>で</li>
+                        <li>G</li>
+                        <li>P</li>
+                        <li> </li>
+                        <li>f</li>
+                        <li>o</li>
+                        <li>r</li>
+                        <li> </li>
+                        <li>G</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>d</li>
+                        <li>受</li>
+                        <li>賞</li>
+                        <li>。</li>
+                        <li>C</li>
+                        <li>a</li>
+                        <li>p</li>
+                        <li>i</li>
+                        <li>t</li>
+                        <li>o</li>
+                        <li>l</li>
+                        <li> </li>
+                        <li>T</li>
+                        <li>h</li>
+                        <li>e</li>
+                        <li>a</li>
+                        <li>t</li>
+                        <li>r</li>
+                        <li>e</li>
+                        <li>,</li>
+                        <li> </li>
+                        <li>S</li>
+                        <li>i</li>
+                        <li>n</li>
+                        <li>g</li>
+                        <li>a</li>
+                        <li>p</li>
+                        <li>o</li>
+                        <li>r</li>
+                        <li>e</li>
+                        <li>（</li>
+                        <li>3</li>
+                        <li>/</li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>開</li>
+                        <li>催</li>
+                        <li>）</li>
+                    </ul>
+                    <div class="entry-section" style="margin-top:12px">
+                        <div class="entry-section-label">何が起きたか</div>
+                        <div class="entry-section-text">2026年3月12日、シンガポールのCapitol Theatreでスパイクスアジア2026の授賞式が開催。日本勢が圧巻で、TBWA\HAKUHODOが「No Smiles（マクドナルドの笑顔禁止キャンペーン）」でCreative Effectiveness、AI搭載眼科診断カメラ「Smart Eye Camera」でInnovationの2冠。DENTSUはZespriの「The Missing Verse: Completing the Bento Symphony」でCreative StrategyのGPを獲得。インドはLeo MumbaiがAPAC Agency of Yearを受賞し最多グランプリ国に輝いた。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">なぜ効いたか</div>
+                        <div class="entry-section-text">「No Smiles」は日本特有の感情抑制文化を逆手にとったブランド戦略の秀逸な設計で、Creative Effectivenessという最も実ビジネス指標に近い部門での受賞が価値を高める。「Smart Eye Camera」は広告×テクノロジー×社会課題解決の掛け算がInnovation部門の評価軸と完全一致した。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">真似できる要素</div>
+                        <ul class="actionable-list">
+                            <li>感情・文化的タブーをブランドの意思表明に転換する逆張り戦略はAPAC圏での最高評価につながる</li>
+                            <li>テクノロジーを「ガジェット」でなく「社会課題の解決手段」として位置付けると審査員の心を動かせる</li>
+                            <li>単一キャンペーンを複数部門でエントリーし、違う切り口の物語を各部門審査員向けに再構成する</li>
+                        </ul>
+                    </div>
+                    <a class="award-link" href="https://www.spikes.asia/news/spikes-asia-announces-its-2026-winners" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-mid">中規模</span>
+                        <span class="award-name">ADFEST</span>
+                        <span class="award-cycle"></span>
+                    </div>
+                    <div class="award-latest award-pending"> — 発表待ち（2026年3月19〜21日Pattaya開催予定）</div>
+                    <a class="award-link" href="https://www.adfest.com/" target="_blank">公式サイト →</a>
+                </div>
+                <div class="award-card">
+                    <div class="award-header">
+                        <span class="award-tier tier-mid">中規模</span>
+                        <span class="award-name">Drum Rankings</span>
+                        <span class="award-cycle"></span>
+                    </div>
+                    <div class="award-latest"><strong>The Drum World Creative Rankings 2026</strong> 最多受賞キャンペーン: FCB New York「Spreadbeats」for Spotify。最多受賞CD: Dennis Fritz（Serviceplan）。Global Agency of the Year: VML</div>
+                    <ul class="award-notable">
+                        <li>2</li>
+                        <li>2</li>
+                        <li>の</li>
+                        <li>主</li>
+                        <li>要</li>
+                        <li>ア</li>
+                        <li>ワ</li>
+                        <li>ー</li>
+                        <li>ド</li>
+                        <li>を</li>
+                        <li>横</li>
+                        <li>断</li>
+                        <li>集</li>
+                        <li>計</li>
+                        <li>。</li>
+                        <li>2</li>
+                        <li>,</li>
+                        <li>2</li>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>キ</li>
+                        <li>ャ</li>
+                        <li>ン</li>
+                        <li>ペ</li>
+                        <li>ー</li>
+                        <li>ン</li>
+                        <li>・</li>
+                        <li>8</li>
+                        <li>1</li>
+                        <li>カ</li>
+                        <li>国</li>
+                        <li>・</li>
+                        <li>5</li>
+                        <li>,</li>
+                        <li>4</li>
+                        <li>0</li>
+                        <li>1</li>
+                        <li>名</li>
+                        <li>の</li>
+                        <li>ク</li>
+                        <li>リ</li>
+                        <li>エ</li>
+                        <li>イ</li>
+                        <li>タ</li>
+                        <li>ー</li>
+                        <li>を</li>
+                        <li>分</li>
+                        <li>析</li>
+                        <li>。</li>
+                        <li>最</li>
+                        <li>多</li>
+                        <li>受</li>
+                        <li>賞</li>
+                        <li>コ</li>
+                        <li>ピ</li>
+                        <li>ー</li>
+                        <li>ラ</li>
+                        <li>イ</li>
+                        <li>タ</li>
+                        <li>ー</li>
+                        <li>:</li>
+                        <li> </li>
+                        <li>J</li>
+                        <li>a</li>
+                        <li>v</li>
+                        <li>i</li>
+                        <li>e</li>
+                        <li>r</li>
+                        <li> </li>
+                        <li>G</li>
+                        <li>r</li>
+                        <li>a</li>
+                        <li>n</li>
+                        <li>a</li>
+                        <li>d</li>
+                        <li>o</li>
+                        <li>s</li>
+                        <li>（</li>
+                        <li>S</li>
+                        <li>e</li>
+                        <li>r</li>
+                        <li>v</li>
+                        <li>i</li>
+                        <li>c</li>
+                        <li>e</li>
+                        <li>p</li>
+                        <li>l</li>
+                        <li>a</li>
+                        <li>n</li>
+                        <li> </li>
+                        <li>M</li>
+                        <li>u</li>
+                        <li>n</li>
+                        <li>i</li>
+                        <li>c</li>
+                        <li>h</li>
+                        <li>）</li>
+                    </ul>
+                    <div class="entry-section" style="margin-top:12px">
+                        <div class="entry-section-label">何が起きたか</div>
+                        <div class="entry-section-text">The Drumが2025年の主要22アワードを横断集計した「世界クリエイティブランキング2026」を発表。SpotifyのためにFCB New Yorkが制作したスプレッドシートをそのまま音楽として配信した「Spreadbeats」が最多受賞キャンペーンに輝いた。エージェンシー部門ではVMLがグローバル1位を獲得し、Serviceplanのクリエイターが個人部門を席巻した。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">なぜ効いたか</div>
+                        <div class="entry-section-text">「Spreadbeats」はSpotifyが音楽配信プラットフォームであることを極限まで活かし、メディアバイイング資料（スプレッドシート）を楽曲として配信するという前代未聞のアイデア。クリエイティビティとメディア戦略の境界を溶かした点が22の異なる審査員の評価を集めた。</div>
+                    </div>
+                    <div class="entry-section">
+                        <div class="entry-section-label">真似できる要素</div>
+                        <ul class="actionable-list">
+                            <li>広告素材自体が「ニュースになる」アイデアは複数のアワードカテゴリーを横断して受賞できる可能性が高い</li>
+                            <li>ブランドの本質的サービス（配信・流通・テクノロジー）を広告フォーマットそのものにする発想を持つ</li>
+                            <li>クリエイティブランキングを活用して競合エージェンシーのアワード戦略を研究し、受賞しやすいカテゴリーの傾向を把握する</li>
+                        </ul>
+                    </div>
+                    <a class="award-link" href="https://www.thedrum.com/news/world-creative-rankings-2026-spotify-s-spreadbeats-is-the-most-awarded-campaign" target="_blank">公式サイト →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-panel" id="panel-bonus">
+
+    <div class="bonus">
+        <div class="bonus-title">Billie — Billieがニューヨークに嗅覚広告スクラッチ＆スニフビルボードを設置</div>
+        <div class="bonus-summary"></div>
+    </div>
+
+    <div class="bonus">
+        <div class="bonus-title">Airbnb.org — Airbnb.org「Home Lives On」被災地の回復力をリアルストーリーで語る</div>
+        <div class="bonus-summary"></div>
+    </div>
+
+    <div class="bonus">
+        <div class="bonus-title">各社 — 花粉症PR施策10選：日本ブランドの季節共感マーケ最前線まとめ</div>
+        <div class="bonus-summary"></div>
+    </div>
+    </div>
+
+    <div class="footer">
+        Generated on 2026-03-18 12:08 | Creative Director's Daily Brief
+    </div>
+</div>
+<script>
+(function() {
+    var tabs = document.querySelectorAll('.tab');
+    var panels = document.querySelectorAll('.tab-panel');
+    tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            var target = this.getAttribute('data-tab');
+            tabs.forEach(function(t) { t.classList.remove('active'); });
+            panels.forEach(function(p) { p.classList.remove('active'); });
+            this.classList.add('active');
+            var panel = document.getElementById('panel-' + target);
+            if (panel) panel.classList.add('active');
+        });
+    });
+    // URLハッシュからエントリにジャンプ時、対応タブを自動表示
+    function activateByHash() {
+        var hash = window.location.hash;
+        if (!hash) return;
+        var el = document.querySelector(hash);
+        if (!el) return;
+        var panel = el.closest('.tab-panel');
+        if (!panel) return;
+        var panelId = panel.id.replace('panel-', '');
+        tabs.forEach(function(t) { t.classList.remove('active'); });
+        panels.forEach(function(p) { p.classList.remove('active'); });
+        panel.classList.add('active');
+        tabs.forEach(function(t) {
+            if (t.getAttribute('data-tab') === panelId) t.classList.add('active');
+        });
+        setTimeout(function() { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+    }
+    activateByHash();
+    window.addEventListener('hashchange', activateByHash);
+})();
+</script>
+</body>
+</html>
