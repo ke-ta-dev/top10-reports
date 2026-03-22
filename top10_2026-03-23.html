@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日のTOP10 - 2026-03-23</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    line-height: 1.7;
+}
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 60px 20px 30px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border-radius: 0 0 24px 24px;
+    margin-bottom: 0;
+}
+.header h1 {
+    font-size: 2rem;
+    background: linear-gradient(90deg, #e74c3c, #f39c12, #e74c3c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: gradient 3s ease infinite;
+    margin-bottom: 8px;
+}
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.header .date {
+    color: #8892b0;
+    font-size: 0.95rem;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #0a0a0a;
+    border-bottom: 2px solid #233554;
+    margin-bottom: 24px;
+    padding-top: 16px;
+}
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #495670;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.tab:hover { color: #8892b0; }
+.tab.active {
+    color: #ccd6f6;
+    border-bottom-color: #e74c3c;
+}
+.tab .tab-count {
+    display: inline-block;
+    background: #233554;
+    color: #8892b0;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 1px 7px;
+    border-radius: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+.tab.active .tab-count {
+    background: #e74c3c;
+    color: white;
+}
+.tab-panel {
+    display: none;
+}
+.tab-panel.active {
+    display: block;
+}
+
+/* Entry Card */
+.entry {
+    background: #112240;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    border: 1px solid #233554;
+    transition: transform 0.2s;
+}
+.entry:hover { transform: translateY(-2px); }
+
+.entry-hero {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.entry-body { padding: 20px 24px; }
+
+.entry-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+.entry-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    font-weight: bold;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+.category-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+}
+.brand-country {
+    font-size: 0.8rem;
+    color: #8892b0;
+}
+
+.entry-title {
+    font-size: 1.15rem;
+    color: #ccd6f6;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.entry-section {
+    margin-bottom: 16px;
+}
+.entry-section-label {
+    font-size: 0.75rem;
+    color: #64ffda;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+.entry-section-text {
+    font-size: 0.9rem;
+    color: #a8b2d1;
+    line-height: 1.8;
+}
+.actionable-list {
+    list-style: none;
+    padding: 0;
+}
+.actionable-list li {
+    font-size: 0.85rem;
+    color: #a8b2d1;
+    padding: 4px 0 4px 20px;
+    position: relative;
+    line-height: 1.7;
+}
+.actionable-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #64ffda;
+}
+.source-link {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 14px;
+    background: #233554;
+    border-radius: 8px;
+    color: #64ffda;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+}
+.source-link:hover { background: #2d4a6f; }
+
+/* Bonus */
+.bonus {
+    background: #1a1a2e;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-left: 3px solid #f39c12;
+}
+.bonus-title { color: #ccd6f6; font-weight: 600; font-size: 0.95rem; }
+.bonus-summary { color: #8892b0; font-size: 0.85rem; margin-top: 4px; }
+
+/* Awards */
+.awards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.award-card {
+    background: #112240;
+    border-radius: 12px;
+    padding: 16px 20px;
+    border: 1px solid #233554;
+    transition: transform 0.2s;
+}
+.award-card:hover { transform: translateY(-1px); }
+.award-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+.award-tier {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.tier-major { background: #e74c3c; color: white; }
+.tier-mid { background: #f39c12; color: #1a1a2e; }
+.tier-niche { background: #233554; color: #8892b0; }
+.award-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ccd6f6;
+}
+.award-cycle {
+    font-size: 0.7rem;
+    color: #495670;
+    margin-left: auto;
+}
+.award-latest {
+    font-size: 0.85rem;
+    color: #a8b2d1;
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+.award-latest strong {
+    color: #64ffda;
+    font-weight: 600;
+}
+.award-notable {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0;
+}
+.award-notable li {
+    font-size: 0.8rem;
+    color: #8892b0;
+    padding: 2px 0 2px 16px;
+    position: relative;
+}
+.award-notable li::before {
+    content: "·";
+    position: absolute;
+    left: 4px;
+    color: #64ffda;
+    font-weight: bold;
+}
+.award-pending {
+    color: #495670;
+    font-style: italic;
+}
+.award-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.75rem;
+    color: #64ffda;
+    text-decoration: none;
+}
+.award-link:hover { text-decoration: underline; }
+.awards-tier-section {
+    margin-bottom: 20px;
+}
+.awards-tier-label {
+    font-size: 0.8rem;
+    color: #8892b0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 0;
+    border-bottom: 1px solid #1a2744;
+    margin-bottom: 12px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #495670;
+    font-size: 0.8rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>今日のTOP10</h1>
+        <p class="date">2026-03-23 | Creative Director's Pick</p>
+    </div>
+    <div class="tabs">
+        <div class="tab active" data-tab="overseas">🌍 海外<span class="tab-count">10</span></div>
+        <div class="tab" data-tab="domestic">🇯🇵 国内<span class="tab-count">10</span></div>
+        <div class="tab" data-tab="awards">🏆 受賞<span class="tab-count">24</span></div>
+        <div class="tab" data-tab="bonus">⚡ ボーナス<span class="tab-count">3</span></div>
+    </div>
+    <div class="tab-panel active" id="panel-overseas">
+
+    <div class="entry" id="entry-1">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1558618047-3c8c76ca7e5b?w=600&h=400&fit=crop" alt="F1「All To Drive For」ダムソン・イドリスが新時代を宣言" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">1</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">Formula 1 / イギリス/グローバル</span>
+            </div>
+            <div class="entry-title">F1「All To Drive For」ダムソン・イドリスが新時代を宣言</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">2026年F1シーズン開幕に合わせ、映画「F1」主演俳優ダムソン・イドリスが全22ドライバーとともに「All To Drive For」キャンペーンを発動。60秒フィルムと屋外広告をロンドン・NY・LA・メルボルンで同時展開。新規制（エンジン50/50電動化・アクティブエアロ）による史上最大の技術刷新を「あなたの知るF1は変わる」と訴求した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">映画効果で拡大した新規F1ファン層に「まだ知らない新章」への期待感を生み出したことが核心。俳優×全ドライバーの豪華布陣が短尺でもSNS自走を実現。屋外×デジタルの同時多都市展開が国際メディアを動かし、広告費ゼロのカバレッジを世界規模で獲得した。新規ルールという社会的ニュースに乗った正確なタイミングも功を奏した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>製品/サービスの大幅刷新は「ルール変更」として語ると既存ユーザーを離反させずに新規を獲得できる</li>
+<li>複数都市・複数媒体の同時発動は国際メディアの自発的報道を引き出すレバレッジになる</li>
+<li>映画やドラマなど外部コンテンツの余韻を使ったブランドキャンペーンは制作費対認知が圧倒的に高い</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://corp.formula1.com/think-you-know-formula-1-campaign-to-mark-2026-formula-1-season-launches-with-damson-idris-and-the-f1-drivers/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-2">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop" alt="Canvaがロンドン・ウォータールー駅を「あるある共感」で14枚ジャック" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">2</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">Canva / オーストラリア/イギリス</span>
+            </div>
+            <div class="entry-title">Canvaがロンドン・ウォータールー駅を「あるある共感」で14枚ジャック</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Canvaがロンドン・ウォータールー駅を14枚の屋外広告で完全制覇。「ロゴをもっと大きくして」「もう少し赤くして」など、クリエイターが日常的に遭遇するクライアントあるあるのフィードバックをユーモラスに昇華し、Canvaの機能を紹介。デザイナー・マーケター層が競うようにSNSに投稿し、オーガニックリーチが爆増した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">ターゲット（クリエイター・マーケター）が日常業務で抱える「共感痛み」を広告の主役にすることで、見た瞬間に「自分のことだ」と感じさせることに成功。人が自然にシェアしたくなる「共感コンテンツ」の教科書的事例。駅という毎日通う場所での反復接触効果も高く、ブランド好意度を大幅に向上させた。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>ターゲットが日常的に感じる「共感できる痛み」を広告の核心にすると強いエンゲージメントが生まれる</li>
+<li>「あるある」系コンテンツはシェアされやすい — 業界特有の内輪ネタが最も刺さる</li>
+<li>交通インフラでの複数面展開は反復接触と話題性を同時に実現できる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.adweek.com/category/creative/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-3">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1600712242805-5f78671b24da?w=600&h=400&fit=crop" alt="Ford「Every Ground Is Our Proving Ground」21年ぶりF1復帰をApple TVで打ち出す" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">3</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">Ford / アメリカ</span>
+            </div>
+            <div class="entry-title">Ford「Every Ground Is Our Proving Ground」21年ぶりF1復帰をApple TVで打ち出す</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">フォードが21年ぶりにF1に復帰し、Oracle Red Bull Racingとのパートナーシップのもと「Every Ground Is Our Proving Ground」キャンペーンを発動。Apple TVのF1放映に合わせ、通常CMの代わりにエンジニアを主人公にしたマイクロドキュメンタリーシリーズを配信。F1からバハ・ダカールまで多様なレースでの技術開発をリアルに描いた。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「広告ではなくドキュメンタリー」という選択が、広告疲れした視聴者に自然なブランドストーリーとして受け入れられた。Apple TVという新メディアでの独占展開が先進性を示し、エンジニア視点という普通見えない「舞台裏」を開示したことで信頼性と親近感を同時に構築した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>CMの代わりにドキュメンタリーシリーズを選択すると視聴継続率と信頼感が劇的に向上する</li>
+<li>新しいストリーミングプラットフォームとの独占連携はブランドの先進性を示す最速の方法</li>
+<li>製品開発の舞台裏（エンジニア・職人の顔）を見せることで機能訴求を超えた情緒的つながりを作る</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.marketingdive.com/news/how-ford-is-accelerating-its-global-campaign-as-it-returns-to-formula-1/813790/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-4">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1622543925917-763c34d1a86e?w=600&h=400&fit=crop" alt="Liquid Death×オジー・オズボーンのDNAを缶に封入した「生物的コラボ」" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">4</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">Liquid Death / アメリカ</span>
+            </div>
+            <div class="entry-title">Liquid Death×オジー・オズボーンのDNAを缶に封入した「生物的コラボ」</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">ウォーター・缶飲料ブランドLiquid Deathがロックレジェンド、オジー・オズボーンのDNAを実際にアイスティー缶に封入するスタントを実施。「あなたは本物のオジーを飲める」というメッセージが世界中のメディアで話題に。製品・アート・スペクタクルの境界を意図的にぼかした施策は、ブランドの「死んだほど重い」アイデンティティを再強調した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">Liquid Deathのブランドコアである「ショックとユーモアの融合」を実行した最良の事例。非現実的なアイデアを実際に実現することがメディア価値を最大化。ロックンロールカルチャーとの完璧な整合性が、ターゲット層（反体制的な若年男性）の熱狂的支持を生んだ。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>ブランドの核心的価値観（反体制・ユーモア）を「実際に実行することで証明」するスタントは絶大な効果を持つ</li>
+<li>「誰もやらないことを本当にやってしまう」の振り切りがメディア報道の最大トリガー</li>
+<li>コラボ相手はブランド世界観の完璧な体現者を選ぶ — 有名度より「合致度」が重要</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://storychief.io/blog/recent-innovative-marketing-campaigns" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-5">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&h=400&fit=crop" alt="Gapが「Better in Denim」でZ世代向けブランドリセット、Young Mikoとコラボ" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">5</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">Gap / アメリカ</span>
+            </div>
+            <div class="entry-title">Gapが「Better in Denim」でZ世代向けブランドリセット、Young Mikoとコラボ</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Gapが2026年春キャンペーン「Better in Denim」を発動。グラミー賞ノミネートのプエルトリコ人ラッパーYoung Mikoとコラボし、ダンス・音楽・アイデンティティを軸にした縦型動画コンテンツをTikTok・Reels・ShortsでローンチKelisのMillkshakeとRobbie Blueの振り付けで参加型コンテンツを生み、Spotifyでもプレイリストを展開した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">長年の「無難な広告」から脱却し、Z世代の文化的言語（音楽・ダンス・表現の多様性）でデニムを語ったことが刺さった。プラットフォームネイティブな縦型動画フォーマットと参加型設計が拡散エンジンとして機能。音楽との掛け合わせでブランドのカルチャー的リレバンスを一気に再建した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>時代遅れになったブランドの再生は製品ではなくカルチャー（音楽・ダンス）から入ると速い</li>
+<li>参加型コンテンツ（真似したくなる振り付け）はUGCエンジンとして機能し広告費をゼロに近づける</li>
+<li>プラットフォーム（縦型動画・Spotify）を横断したコンテンツ設計でブランドタッチポイントを最大化する</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.adweek.com/category/campaigns/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-6">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=400&fit=crop" alt="IKEAが「価格を隠した」品質訴求広告でブランド刷新——Mother London制作" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">6</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">IKEA / スウェーデン/イギリス</span>
+            </div>
+            <div class="entry-title">IKEAが「価格を隠した」品質訴求広告でブランド刷新——Mother London制作</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">IKEAがMother Londonと制作した新キャンペーンで、素材（無垢材・ウール・鋳鉄・ベルベット）のクローズアップ写真に「価格を見たら信じられない……鋳鉄製だ」というコピーを添えた屋外・印刷広告を展開。あえて価格を隠すことで「IKEAは安かろうではなく良品廉価」の再定義を試みた。フォトグラファーMarloes Haarmansによる質感豊かなビジュアルが話題に。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">値引き訴求が当たり前の家具小売業で「あえて価格を見せない」という逆張りが強烈な差別化を生んだ。製品の素材・品質を正面から語ることで、IKEAのブランドポジションを「コスパの王様」から「品質への自信」に引き上げた。ビジュアルの美しさが「IKEAらしくない」という驚きを生み、SNSシェアを促進した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>価格訴求が常識の業界で「あえて価格を隠す」逆張りが最大の話題喚起装置になる</li>
+<li>素材・原材料のビジュアルをアート写真として見せることでブランドのプレミアム感を演出できる</li>
+<li>長年のブランド像（安さ）を「品質への自信」に転換するポジショニング変更は具体的なビジュアルで示す</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.famouscampaigns.com/2026/01/ikea-lets-quality-do-the-talking-in-latest-campaign/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-7">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="AstronomerがGwyneth Paltrowを起用したPR危機の「自虐返し」が700万再生" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">7</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">Astronomer / アメリカ</span>
+            </div>
+            <div class="entry-title">AstronomerがGwyneth Paltrowを起用したPR危機の「自虐返し」が700万再生</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">データ分析スタートアップAstronomerが障害発生によるPR危機の最中、Ryan Reynoldsのエージェンシー「Maximum Effort」と組み、Gwyneth Paltrowを「企業危機のスポークスパーソン」として起用した動画を公開。「Astronomerへのご関心、ありがとうございます」と冗談交じりにPaltrowが語り、途中で気絶するシーンも。YouTube再生数約70万、業界全体に波及した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">危機管理の常識「謝罪・誠実な説明」を覆し、セルフディプリケーション（自虐ユーモア）で正面から笑いに変えた逆転発想が効いた。PR危機そのものをコンテンツに変換し、スタートアップの存在を一夜にして業界全体に広めた。有名人×ユーモアの組み合わせがメディアの「面白い失敗談」として拡散された。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>危機やミスを「自虐コンテンツ」に転換すると謝罪コストゼロで好感度が上がることがある</li>
+<li>Maximum Effort型「スピードとユーモア」の危機PR対応チームを事前に準備しておく価値がある</li>
+<li>B2Bスタートアップでも有名人×ユーモアで消費者レベルの認知を一気に獲得できる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://storychief.io/blog/recent-innovative-marketing-campaigns" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-8">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?w=600&h=400&fit=crop" alt="Airbnb.org「Home Lives On」災害サバイバーの実話が社会的共感を獲得" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">8</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">Airbnb.org / アメリカ</span>
+            </div>
+            <div class="entry-title">Airbnb.org「Home Lives On」災害サバイバーの実話が社会的共感を獲得</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">AirbnbのNPO部門Airbnb.orgがR/GAおよびBob Industriesと共同制作した「Home Lives On」キャンペーンを拡大展開。山火事・洪水などの自然災害で家を失った3家族のリアルな物語を短編フィルムで公開。「家は場所ではなく感覚だ」というメッセージで、緊急避難シェルターとしてのAirbnbの役割を感情的に訴求した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">製品訴求ゼロのパーポーズドリブンな内容が、CSRを超えた「社会的共感の生成装置」として機能した。気候変動が日常化した2026年の文脈でタイムリーであり、実話という真正性がフィクション広告を超えた説得力を持った。NPO部門という「利益なき善意」の枠組みが批判を封じ信頼を最大化した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>NPO・CSR部門を「製品訴求なき信頼構築」の別部隊として活用するとブランド全体の好感度が上がる</li>
+<li>実話・ドキュメンタリー型コンテンツは制作費以上の信頼性と拡散力を持つ</li>
+<li>社会課題（気候変動・災害）との関係を「支援している」から「共にいる」へ言語を変えると共感が倍増する</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.adweek.com/creativity/airbnborg-shows-what-home-means-after-disaster/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-9">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&h=400&fit=crop" alt="Ray-Ban×韓国ポップカルチャー コラボでグローバルメディア統合も同時発表" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">9</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">Ray-Ban (EssilorLuxottica) / イタリア</span>
+            </div>
+            <div class="entry-title">Ray-Ban×韓国ポップカルチャー コラボでグローバルメディア統合も同時発表</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Ray-BanがK-POPカルチャーの世界的影響力を取り込んだ新キャンペーンを発動。同日、親会社EssilorLuxotticaは全ブランドのグローバルメディア業務をPublicis Groupeへ一本化（総額4億8,000万ドル）と発表。マーケティング再編と文化的関連性強化を同時に打ち出し、ブランドポジションの刷新意志を鮮明にした。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">韓国ポップカルチャーは2026年現在も世界最大の若年層文化発信源であり、そのタイミングに合わせた起用が最大の話題性を生んだ。メディア業務の一本化同時発表が業界に「本気の構造改革」を印象づけ、広告主・エージェンシー双方からの注目を集めた。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>K-POP・アジアポップカルチャーとの接点はブランドの若年層ターゲティングにおいて2026年最大の加速剤</li>
+<li>メディア業務の統合（エージェンシー集約）発表はニュース性が高くブランドの本気度を示すシグナルになる</li>
+<li>文化的コラボとビジネス発表を同日に行うことで、メディアの「一石二鳥」報道を引き出せる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.adweek.com/creativity/ray-ban-embraces-korean-pop-culture-for-new-campaign/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-10">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1461897104016-0b3b00cc81ee?w=600&h=400&fit=crop" alt="Stravaが「Kudos Collective」でLAマラソンを地域コミュニティイベントに転換" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">10</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">Strava / アメリカ</span>
+            </div>
+            <div class="entry-title">Stravaが「Kudos Collective」でLAマラソンを地域コミュニティイベントに転換</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">ランニングアプリStravaが2026年LAマラソンに合わせ招待制の「Kudos Collective」イベントを開催。2マイルのグループランと朝食会に、多様なランクリエイターやコミュニティ創設者を招待。大型スポンサーでも派手な広告でもなく、コア層との「小さく深い」接触を選択したことが業界で高い評価を受けた。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">Stravaのプロダクト価値（コミュニティ）をそのままイベント体験に転換した一貫性が信頼を生んだ。招待制という希少性がSNSでの「体験共有欲」を高め、参加者全員がコンテンツ生成者になる設計が機能。大規模スポンサー費用なしで質の高いUGCとブランド好意度を同時獲得した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>プロダクトの核心的価値（Stravaならコミュニティ）をそのままリアルイベントに変換する発想の一貫性</li>
+<li>招待制・小規模イベントは参加者全員をアンバサダーにする最も効率的な施策</li>
+<li>大型スポンサーより「コア層と深く交わる小さな接点」の方が長期的なブランド資産になる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://harro.com/2026/03/20/ppr-special-edition-the-best-influencer-marketing-campaigns-of-2026-so-far/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+    </div>
+    <div class="tab-panel" id="panel-domestic">
+
+    <div class="entry" id="entry-11">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=400&fit=crop" alt="wena X ソニーから独立して世界最小スマートウォッチ、クラウドファンディング即日完走" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">11</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">augment AI（wena X） / 日本</span>
+            </div>
+            <div class="entry-title">wena X ソニーから独立して世界最小スマートウォッチ、クラウドファンディング即日完走</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">ソニーのwena事業を継承したスタートアップaugment AIが世界最小スマートウォッチ「wena X」を発表し、3月20日よりGREEN FUNDINGにてクラウドファンディングを開始。46,800円〜の超早割が即日完走。既存腕時計に装着可能なバックル構造、ChatGPT対応、AI睡眠分析、1週間バッテリー、日本国内サーバー管理のプライバシー強化が特徴。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「ソニー継承」「世界最小」「ChatGPT」というキーワードが同時に訴求でき、テック系メディアが一斉に報道。10周年記念限定版（34万9,800円）という高価格帯モデルも設定し、ブランドの幅を演出した。「日本のプライバシー管理」という安心感が熱心なテックユーザー層の購買動機を刺激した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>大企業からのスピンアウト・独立は「正統な継承者」として信頼を瞬時に確立できる最強の文脈</li>
+<li>クラウドファンディングは新規スタートアップの市場検証と初期ファン獲得を同時に実現する最良の手段</li>
+<li>複数の価格帯（4.6万・34万円）設定でターゲット層を広げながらブランドプレミアム感も維持できる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://prtimes.jp/main/html/rd/p/000000002.000179064.html" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-12">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1611605698335-8b1569810432?w=600&h=400&fit=crop" alt="POPOPO誕生——GACKT・ひろゆき・川上量生ら豪華陣容の国産SNS上陸" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">12</span>
+                <span class="category-badge" style="background:#8e44ad">Platform/Policy</span>
+                <span class="brand-country">POPOPO / 日本</span>
+            </div>
+            <div class="entry-title">POPOPO誕生——GACKT・ひろゆき・川上量生ら豪華陣容の国産SNS上陸</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">カメラ不要の新世代テレビ電話SNS「POPOPO」がサービス開始。GACKT、西村博之（ひろゆき）、川上量生（ニコ動創業者）、庵野秀明（エヴァ監督）が取締役に就任した点が大きな話題を呼んだ。従来のビデオ通話とは異なる音声・テキスト中心のリアルタイム接続体験で、日本発の次世代SNSとして注目が集まっている。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「4人の有名人同時取締役就任」というニュース性が高いアナウンスでメディアを一瞬でジャック。カメラ不要という機能差別化がプライバシー意識の高い日本市場にフィット。各人のファンコミュニティ（GACKT・ひろゆきそれぞれの圧倒的フォロワー）が有機的に拡散装置として機能した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>新サービス立ち上げ時の「意外な著名人複数同時登用」発表はSNSとメディアを一度に動かす最強PR</li>
+<li>機能の差別化（カメラ不要）を「プライバシーへの配慮」として言語化すると日本市場での親和性が高まる</li>
+<li>異なるコミュニティの著名人を複数起用すると、互いのファン層を相互に取り込める</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://prtimes.jp/main/html/searchbiscate/busi_cate_id/017" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-13">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=600&h=400&fit=crop" alt="明治グループ「Melody of meiji」FRUITS ZIPPERで全世代スマホ動線設計" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">13</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">明治グループ / 日本</span>
+            </div>
+            <div class="entry-title">明治グループ「Melody of meiji」FRUITS ZIPPERで全世代スマホ動線設計</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">明治グループが「Melody of meiji」キャンペーンを展開。Z世代に絶大な人気を持つFRUITS ZIPPERを起用した動画を軸に、大正・昭和・平成・令和各時代のアイテムを賞品にした全世代向けプレゼントキャンペーンを同時実施。特に「平成賞」に写ルンですを採用したことが平成レトロブームと合致し、若年層の応募・シェアを加速させた。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">老舗食品ブランドがZ世代ブームのアーティストを起用することで若返りを演出しながら、各時代の賞品設計で既存ファン（親世代・祖父母世代）も取り込む全方位設計が秀逸だった。SNS映えする写ルンですを「平成賞」にしたことが話題性とシェア欲を同時に刺激した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>ブランドの歴史の長さを世代別の賞品設計に変換すると「全世代キャンペーン」が低コストで成立する</li>
+<li>流行の若手アーティストと老舗ブランドの組み合わせはギャップ効果で強い話題を生む</li>
+<li>「平成レトロ」など現在進行形のノスタルジアトレンドをインセンティブに活用すると応募率が高まる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://n2p.co.jp/blog/campaign/campaigntag/maker/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-14">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop" alt="TOICAがAppleウォレット対応——交通系ICのスマホ統合で地域交通DXが加速" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">14</span>
+                <span class="category-badge" style="background:#8e44ad">Platform/Policy</span>
+                <span class="brand-country">JR東海 / TOICA / 日本</span>
+            </div>
+            <div class="entry-title">TOICAがAppleウォレット対応——交通系ICのスマホ統合で地域交通DXが加速</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">JR東海のTOICAがAppleウォレット対応を開始。iPhoneおよびApple WatchでTOICA（ICOCAモデル）の利用が可能になり、東海・東西の交通系IC統合が進む重要なマイルストーンとなった。インバウンド対応としても注目され、外国人観光客がスマホ一つで交通インフラを利用できる環境整備が加速した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「カードレス・財布レス」の生活スタイルへの対応がユーザーの日常利便性を大きく改善。Apple Watchとの連携でヘルスケア×交通という新たな生活行動データの結合点となる可能性が業界の注目を集めた。インバウンド対応の文脈でもメディアに取り上げられ、一石二鳥の話題を生んだ。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>既存インフラのデジタル統合（スマホ対応）は製品開発コストゼロでユーザー体験を劇的に改善できる</li>
+<li>インバウンド（訪日外国人）の利便性向上という文脈は国内外両方のメディアに取り上げられやすい</li>
+<li>Apple/Googleのエコシステムとの統合発表はIT系メディアを自動的に動かすPRトリガーになる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://prtimes.jp/main/html/searchbiscate/busi_cate_id/017" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-15">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=600&h=400&fit=crop" alt="楽天リーベイツ1,000ストア突破記念——ポイント最大+10%キャンペーンで顧客ロイヤルティ強化" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">15</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">楽天リーベイツ / 日本</span>
+            </div>
+            <div class="entry-title">楽天リーベイツ1,000ストア突破記念——ポイント最大+10%キャンペーンで顧客ロイヤルティ強化</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">楽天のポイントサイト「リーベイツ」が提携1,000ストア突破を記念し、ポイント還元率最大+10%の記念キャンペーンを開催（3月16日〜）。節目の数字をキャンペーンに直結させることで、既存会員の活性化と新規会員獲得を同時に図った。ポイントエコノミー強化の施策として業界メディアにも広く報道された。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">マイルストーン（1,000ストア）という具体的な数字がプレスリリースの説得力を高め、メディア掲載につながった。ポイント還元という即効性のあるインセンティブが既存ユーザーの即時行動を促した。楽天エコシステム全体への波及効果を期待したユーザーの関心も高く、相乗効果を生んだ。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>マイルストーン（100万ユーザー・1,000店舗等）はキャンペーン設計の最良の文脈 — 常に計画しておく</li>
+<li>節目記念キャンペーンはプレスリリース訴求力が高く低コストでメディア露出を獲得できる</li>
+<li>ポイント還元はポイントエコノミー圏のユーザーに対して最も効率的な行動喚起インセンティブ</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://prtimes.jp/main/html/searchrlp/release_type_id/03/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-16">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&h=400&fit=crop" alt="星街すいせい 個人事務所「Studio STELLAR」設立——VTuberのインディペンデント化が新潮流" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">16</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">星街すいせい / Studio STELLAR / 日本</span>
+            </div>
+            <div class="entry-title">星街すいせい 個人事務所「Studio STELLAR」設立——VTuberのインディペンデント化が新潮流</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">ホロライブ所属のVTuber・星街すいせいがアーティスト活動強化を目的として個人事務所「Studio STELLAR」を設立し、新たな支援体制への移行を発表。ファンや業界関係者から「VTuber経済圏の成熟」を示すマイルストーンとして大きな注目を集めた。個人IPの自律的展開というトレンドに乗り、今後のマーチャンダイジング・コラボ戦略の幅広さが期待されている。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">すいせいは歌・ゲーム・キャラクター性のすべてで高い人気を誇り、個人事務所化が「自由度の拡大」として前向きに受け取られた。VTuber市場全体の注目を集め、ホロライブコミュニティを超えた広報効果が生まれた。個人IPのブランド独立というタイミングに、スポンサー・コラボ先候補からの注目も集まった。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>インフルエンサー・クリエイターの独立・事務所設立発表は所属コミュニティ外へのリーチを一気に拡大できる機会</li>
+<li>VTuber・バーチャルタレントはZ世代向けコラボパートナーとしてのROIが芸能人より高い傾向にある</li>
+<li>クリエイターIPの独立支援（スポンサー・協業）は長期的なブランド親和性構築に有効</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://prtimes.jp/main/html/searchbiscate/busi_cate_id/017" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-17">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&h=400&fit=crop" alt="my route「KARTE STAR 2026」CXクリエイティブ賞——おでかけヒント配信が評価" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">17</span>
+                <span class="category-badge" style="background:#27ae60">Tools/Workflow</span>
+                <span class="brand-country">my route（西日本鉄道・トヨタ自動車） / 日本</span>
+            </div>
+            <div class="entry-title">my route「KARTE STAR 2026」CXクリエイティブ賞——おでかけヒント配信が評価</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">西日本鉄道・トヨタ自動車が共同運営するMaaSアプリ「my route」が、カスタマーエクスペリエンスツール「KARTE」のアワード「KARTE STAR 2026」にて新設のCXクリエイティブ賞を受賞。ユーザーの移動パターンや位置情報に基づいてパーソナライズされた「おでかけヒント」を配信する施策が、CX先進事例として評価された。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「乗換案内」という機能的ツールをパーソナライズされた「生活のナビゲーター」へ進化させた点がCX評価の核心。位置情報×行動データを活用したリアルタイムパーソナライゼーションは、ユーザーが「提案を待っていた」ような体験を生み、アプリの継続利用率を向上させた。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>機能ツール（地図・乗換案内）を「ライフスタイルの伴走者」に進化させるパーソナライズ設計がCX評価の核</li>
+<li>位置情報と行動ログを組み合わせたリアルタイムプッシュ通知は継続利用率向上の最有力施策</li>
+<li>業界アワードへの応募・受賞は自社施策の権威付けとメディア露出を低コストで実現できる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://prtimes.jp/main/html/searchbiscate/busi_cate_id/017" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-18">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="電通「AIコネクションプランナー」48の生活者価値観クラスター分析で広告最適化" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">18</span>
+                <span class="category-badge" style="background:#27ae60">Tools/Workflow</span>
+                <span class="brand-country">電通 / 日本</span>
+            </div>
+            <div class="entry-title">電通「AIコネクションプランナー」48の生活者価値観クラスター分析で広告最適化</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">電通が生活者の価値観を48クラスターに分類したAIプランニングツール「AIコネクションプランナー」の開発を発表。消費者インサイトの自動分析とメディアプランニングの最適化を同時に実現するとされ、従来数週間要したターゲット分析を数時間で完了させる。2026年4月より主要広告主向けに段階展開を開始。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">電通という業界最大手が公式にAIプランニングツールを商用化したことで、広告業界全体のAI活用が「実験」から「標準」へとシフトするシグナルと受け取られた。48クラスターという具体的な数字が技術的信頼性を担保し、「従来比で何週間短縮」という明確なROI提示が広告主の興味を引いた。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>自社のAIツール開発・導入を「業界標準を先取りした」文脈でアナウンスすると採用促進につながる</li>
+<li>具体的なクラスター数・時間短縮数値を伴う発表はメディアが取り上げやすい形式</li>
+<li>大手代理店のAI活用事例を研究し、自社マーケティングへの応用ポイントを今から洗い出す</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.advertimes.com/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-19">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1569070738799-f0d65f40c43c?w=600&h=400&fit=crop" alt="日清食品「ラーツー」プレゼントキャンペーンでUGCと景品の二輪駆動を実現" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">19</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">日清食品（カップヌードル） / 日本</span>
+            </div>
+            <div class="entry-title">日清食品「ラーツー」プレゼントキャンペーンでUGCと景品の二輪駆動を実現</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">日清食品カップヌードルが「#ここが私のラーツースポット」プレゼントキャンペーンを引き続き展開中。自分お気に入りのアウトドアスポットでカップヌードルを楽しむシーンを投稿するX・Instagram連動型施策で、景品発送も実施済み。2026年4月からの値上げ（5〜11%）を前に、ブランド好意度の維持・向上を図る絶妙なタイミングの施策として注目された。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「ラーツー（ラーメンツーリング）」というニッチだが確実に存在するカルチャーに光を当てたことで、コアユーザーの強いロイヤルティを刺激。値上げ発表前のブランドGoodwill積み上げとして機能した。UGCと景品配布を組み合わせた二輪駆動がコンテンツ拡散と購買行動の両方を同時促進した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>値上げ・価格改定の前にブランド好意度を高める施策を先行実施することで反発を最小化できる</li>
+<li>ニッチカルチャー（ラーツー・登山飯など）を前面に出すキャンペーンはコアファンの熱量を最大化する</li>
+<li>SNS投稿+景品の組み合わせはUGC量と購買意欲の双方を効率的に高める最もコスパの良い施策</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.nissin.com/jp/product/campaigns/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-20">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1569336415962-a4bd9f69c8bf?w=600&h=400&fit=crop" alt="JR九州「キューポちゃん誕生祭」アプリ×LINE×カード多接点設計で会員活性化" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">20</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">JR九州 / JRキューポ / 日本</span>
+            </div>
+            <div class="entry-title">JR九州「キューポちゃん誕生祭」アプリ×LINE×カード多接点設計で会員活性化</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">JR九州のポイントアプリ「JRキューポ」がマスコット「キューポちゃん」の誕生日（3月3日）を軸にした誕生祭キャンペーンを3月23日まで展開。新規アプリDL・ログインで抽選2,000人に1,000pt、JQ CARD/SUGOCA連携で2万人に200pt、公式LINE連携で500円クーポン、アミュプラザ各館での限定巾着配布など多層的な特典設計でポイント会員の活性化を図った。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">マスコットキャラクターの誕生日という「自然な文脈」を使って、アプリ・カード・LINE・店舗のすべての接点を同時に動かすオムニチャネル設計が評価されている。それぞれの特典が独立していながら全体として「誕生祭」という一つのブランド体験に統合されており、エンゲージメントの多層化が実現できた。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>マスコット誕生日・周年などの「自然な文脈」をオムニチャネルキャンペーンのフックとして活用する</li>
+<li>アプリ・SNS・カード・実店舗を同一キャンペーンに統合すると各接点の相乗効果が生まれる</li>
+<li>会員向け多層特典設計は「何かひとつは自分に該当する」という参加のしやすさで活性化率が高まる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://predge.jp/339319/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+    </div>
+    <div class="tab-panel" id="panel-awards">
+        <div class="awards-tier-section">
+            <div class="awards-tier-label" style="font-size:1rem;border-bottom:2px solid #233554;padding-bottom:10px;margin-bottom:16px">🇯🇵 国内の広告賞</div>
+        </div>
+        <div class="awards-tier-section">
+            <div class="awards-tier-label" style="font-size:1rem;border-bottom:2px solid #233554;padding-bottom:10px;margin-bottom:16px">🌍 海外の広告賞</div>
+        </div>
+    </div>
+    <div class="tab-panel" id="panel-bonus">
+
+    <div class="bonus">
+        <div class="bonus-title">ESPN — ESPNがMarch Madness「括弧発症」キャンペーンでスポーツファン文化を愛でる</div>
+        <div class="bonus-summary"></div>
+    </div>
+
+    <div class="bonus">
+        <div class="bonus-title">電通/各社 — 電通 GEO対策（AI検索最適化）を提唱、SEOの次世代施策として業界に浸透</div>
+        <div class="bonus-summary"></div>
+    </div>
+
+    <div class="bonus">
+        <div class="bonus-title">各社 — K-POP×日本ビューティーブランド コラボが欧米市場への橋渡しに</div>
+        <div class="bonus-summary"></div>
+    </div>
+    </div>
+
+    <div class="footer">
+        Generated on 2026-03-22 09:20 | Creative Director's Daily Brief
+    </div>
+</div>
+<script>
+(function() {
+    var tabs = document.querySelectorAll('.tab');
+    var panels = document.querySelectorAll('.tab-panel');
+    tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            var target = this.getAttribute('data-tab');
+            tabs.forEach(function(t) { t.classList.remove('active'); });
+            panels.forEach(function(p) { p.classList.remove('active'); });
+            this.classList.add('active');
+            var panel = document.getElementById('panel-' + target);
+            if (panel) panel.classList.add('active');
+        });
+    });
+    // URLハッシュからエントリにジャンプ時、対応タブを自動表示
+    function activateByHash() {
+        var hash = window.location.hash;
+        if (!hash) return;
+        var el = document.querySelector(hash);
+        if (!el) return;
+        var panel = el.closest('.tab-panel');
+        if (!panel) return;
+        var panelId = panel.id.replace('panel-', '');
+        tabs.forEach(function(t) { t.classList.remove('active'); });
+        panels.forEach(function(p) { p.classList.remove('active'); });
+        panel.classList.add('active');
+        tabs.forEach(function(t) {
+            if (t.getAttribute('data-tab') === panelId) t.classList.add('active');
+        });
+        setTimeout(function() { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+    }
+    activateByHash();
+    window.addEventListener('hashchange', activateByHash);
+})();
+</script>
+</body>
+</html>
