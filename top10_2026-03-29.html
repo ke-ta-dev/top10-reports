@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日のTOP10 - 2026-03-29</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    line-height: 1.7;
+}
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 60px 20px 30px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border-radius: 0 0 24px 24px;
+    margin-bottom: 0;
+}
+.header h1 {
+    font-size: 2rem;
+    background: linear-gradient(90deg, #e74c3c, #f39c12, #e74c3c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: gradient 3s ease infinite;
+    margin-bottom: 8px;
+}
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.header .date {
+    color: #8892b0;
+    font-size: 0.95rem;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #0a0a0a;
+    border-bottom: 2px solid #233554;
+    margin-bottom: 24px;
+    padding-top: 16px;
+}
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #495670;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.tab:hover { color: #8892b0; }
+.tab.active {
+    color: #ccd6f6;
+    border-bottom-color: #e74c3c;
+}
+.tab .tab-count {
+    display: inline-block;
+    background: #233554;
+    color: #8892b0;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 1px 7px;
+    border-radius: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+.tab.active .tab-count {
+    background: #e74c3c;
+    color: white;
+}
+.tab-panel {
+    display: none;
+}
+.tab-panel.active {
+    display: block;
+}
+
+/* Entry Card */
+.entry {
+    background: #112240;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    border: 1px solid #233554;
+    transition: transform 0.2s;
+}
+.entry:hover { transform: translateY(-2px); }
+
+.entry-hero {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.entry-body { padding: 20px 24px; }
+
+.entry-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+.entry-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    font-weight: bold;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+.category-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+}
+.brand-country {
+    font-size: 0.8rem;
+    color: #8892b0;
+}
+
+.entry-title {
+    font-size: 1.15rem;
+    color: #ccd6f6;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.entry-section {
+    margin-bottom: 16px;
+}
+.entry-section-label {
+    font-size: 0.75rem;
+    color: #64ffda;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+.entry-section-text {
+    font-size: 0.9rem;
+    color: #a8b2d1;
+    line-height: 1.8;
+}
+.actionable-list {
+    list-style: none;
+    padding: 0;
+}
+.actionable-list li {
+    font-size: 0.85rem;
+    color: #a8b2d1;
+    padding: 4px 0 4px 20px;
+    position: relative;
+    line-height: 1.7;
+}
+.actionable-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #64ffda;
+}
+.source-link {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 14px;
+    background: #233554;
+    border-radius: 8px;
+    color: #64ffda;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+}
+.source-link:hover { background: #2d4a6f; }
+
+/* Bonus */
+.bonus {
+    background: #1a1a2e;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-left: 3px solid #f39c12;
+}
+.bonus-title { color: #ccd6f6; font-weight: 600; font-size: 0.95rem; }
+.bonus-summary { color: #8892b0; font-size: 0.85rem; margin-top: 4px; }
+
+/* Awards */
+.awards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.award-card {
+    background: #112240;
+    border-radius: 12px;
+    padding: 16px 20px;
+    border: 1px solid #233554;
+    transition: transform 0.2s;
+}
+.award-card:hover { transform: translateY(-1px); }
+.award-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+.award-tier {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.tier-major { background: #e74c3c; color: white; }
+.tier-mid { background: #f39c12; color: #1a1a2e; }
+.tier-niche { background: #233554; color: #8892b0; }
+.award-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ccd6f6;
+}
+.award-cycle {
+    font-size: 0.7rem;
+    color: #495670;
+    margin-left: auto;
+}
+.award-latest {
+    font-size: 0.85rem;
+    color: #a8b2d1;
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+.award-latest strong {
+    color: #64ffda;
+    font-weight: 600;
+}
+.award-notable {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0;
+}
+.award-notable li {
+    font-size: 0.8rem;
+    color: #8892b0;
+    padding: 2px 0 2px 16px;
+    position: relative;
+}
+.award-notable li::before {
+    content: "·";
+    position: absolute;
+    left: 4px;
+    color: #64ffda;
+    font-weight: bold;
+}
+.award-pending {
+    color: #495670;
+    font-style: italic;
+}
+.award-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.75rem;
+    color: #64ffda;
+    text-decoration: none;
+}
+.award-link:hover { text-decoration: underline; }
+.awards-tier-section {
+    margin-bottom: 20px;
+}
+.awards-tier-label {
+    font-size: 0.8rem;
+    color: #8892b0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 0;
+    border-bottom: 1px solid #1a2744;
+    margin-bottom: 12px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #495670;
+    font-size: 0.8rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>今日のTOP10</h1>
+        <p class="date">2026-03-29 | Creative Director's Pick</p>
+    </div>
+    <div class="tabs">
+        <div class="tab active" data-tab="overseas">🌍 海外<span class="tab-count">10</span></div>
+        <div class="tab" data-tab="domestic">🇯🇵 国内<span class="tab-count">10</span></div>
+        <div class="tab" data-tab="awards">🏆 受賞<span class="tab-count">24</span></div>
+        <div class="tab" data-tab="bonus">⚡ ボーナス<span class="tab-count">3</span></div>
+    </div>
+    <div class="tab-panel active" id="panel-overseas">
+
+    <div class="entry" id="entry-1">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&h=400&fit=crop" alt="Patrón×デル・トロ監督「The Perfect Pour」初CM演出でテキーラを暗黒ファンタジーに変換" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">1</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">Patrón Tequila / メキシコ/アメリカ</span>
+            </div>
+            <div class="entry-title">Patrón×デル・トロ監督「The Perfect Pour」初CM演出でテキーラを暗黒ファンタジーに変換</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">ギレルモ・デル・トロ監督が初のTV CMを演出。BBH USA制作のショートフィルム「The Perfect Pour」はハシエンダ・パトロン（メキシコ・ハリスコ）で撮影。モーションキャプチャのスケルトンとメキシコのイメージリーを駆使した暗黒ファンタジー映像で「テキーラを注ぐ」行為を映画的瞬間に昇華。ESPNのNBA中継でプレミア公開。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">アカデミー賞監督の「初」CM演出というニュース性が自動的にVariety・Ad Age・The Drum等の報道を招集。デル・トロの「クラフトへの執着」とパトロンの「職人的製法」の並列がブランドストーリーとして完璧に機能。「注ぐ」という日常動作を大規模映画制作に変換する逾説的アプローチがソーシャルでの拡散を加速させた。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>アカデミー賞監督・アーティストの「初CM」は自動的にニュース価値を生むPR資産になる</li>
+<li>「日常動作を映画的に撮る」という逾説的演出はブランドプレミアム感を最大化する</li>
+<li>クリエイターの制作哲学とブランドフィロソフィーを「同一視」するストーリー設計がブランドフィットを高める</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://adage.com/creativity/creative-strategy-tactics/aa-patron-the-perfect-pour/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-2">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=600&h=400&fit=crop" alt="British Airways「An Original British Briefing」バーンアウトからの脱出を安全ビデオ風に演出" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">2</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">British Airways / イギリス</span>
+            </div>
+            <div class="entry-title">British Airways「An Original British Briefing」バーンアウトからの脱出を安全ビデオ風に演出</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Uncommon制作の新CM「An Original British Briefing」で、機内安全ビデオのフォーマットを採用。歯医者、駐車場トラブル、グループチャット通知など日常のストレスを“非常口”として映像化し、「最も重要な旅」への脱出を促すユーモアキャンペーン。「感情的荷物を収納して」というコピーが話題化。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「安全ビデオ」という航空会社固有のフォーマットをユーモアに転換し、「旅行＝リセットボタン」というブランドメッセージを自然に伝達。バーンアウトやドゥームスクローリングといった2026年の時代精神を捉え、共感性を最大化した。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>業界固有のフォーマット（安全ビデオ・取扱説明書等）をユーモアに転換するとブランドらしさが際立つ</li>
+<li>「ストレスからの脱出」は2026年の普遍的感情であり旅行・ウェルネスブランドに広く応用可能</li>
+<li>日常の共感ポイントを羅列して「あるある」感を積み上げる構成がSNSシェアを誘発する</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.thedrum.com/news/ad-of-the-day-british-airways-turns-everyday-stress-into-a-reason-to-escape" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-3">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop" alt="CoorDown「JUST EVOLVE」Rワード引退要請キャンペーンがDisability ScoopからBBCまで世界拡散" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">3</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">CoorDown / NDSS / イタリア/アメリカ</span>
+            </div>
+            <div class="entry-title">CoorDown「JUST EVOLVE」Rワード引退要請キャンペーンがDisability ScoopからBBCまで世界拡散</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">世界ダウン症デー（3月21日）に合わせ、CoorDownがNDSSと共同で「JUST EVOLVE」キャンペーンを展開。19歳のダウン症俳優 Noah M Matofskyが出演するフィルムで、「尿で洗濯」「ヒロイン入り咳止め薬」など「かつて普通だった行為」を列挙し、Rワードも「進化すべき過去の言葉」と位置づけ。AIエージェント（Fairflai制作）も用意。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「過去に普通だったことが今はありえない」という並列構造で、Rワードも「同じく進化すべき」と納得させる論理設計が見事。「90%の人は直接侥辱する目的ではない」というデータ提示が「自分も無意識に」という気づきを促し、行動変容のトリガーになった。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>「過去の普通を並列して現在の『普通』を問う」構成は問題提起型キャンペーンの強力なテンプレート</li>
+<li>問題提起型PRにはAIツール等の「次のアクション」をセットするとエンゲージメントが深まる</li>
+<li>「誰も悪意はない」というデータ提示が防御反応を解除し、行動変容を促すコミュニケーション設計</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.thedrum.com/news/ad-of-the-day-down-syndrome-non-profit-coordown-issues-a-powerful-plea-to-retire-the-r-word" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-4">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600&h=400&fit=crop" alt="Carlsberg「Signs of Unity」アンフィールド45,000人がBSLで「YNWA」を手話合唱" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">4</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">Carlsberg / イギリス</span>
+            </div>
+            <div class="entry-title">Carlsberg「Signs of Unity」アンフィールド45,000人がBSLで「YNWA」を手話合唱</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">CarlsbergがLiverpool FC・英国聶覚障害者協会（BDA）と連携し、アンフィールドで「You'll Never Walk Alone」を英国手話（BSL）で合唱する「Signs of Unity」を実施。Fold7/COPA90制作フィルムを3月20日公開。今後全ホーム戦でBSL通訳を常設化。バースタッフにもBSL研修を提供。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「81%の聴覚障害者がマッチデーチャントに参加したいができない」というデータが「解決すべき問題」を明確化。スポーツスポンサーがスタジアムのインクルージョンを永続的に変える「レガシー型」キャンペーンとして、Korea HeraldからManila Timesまで世界的に報道された。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>スポーツスポンサーは「一過性イベント」より「永続的制度変更」に投資するとPR価値が累積する</li>
+<li>インクルージョン施策は「参加したいができない」のデータから始めると共感と報道を同時に獲得できる</li>
+<li>「チームアンセムを手話で」のように既存の感動体験を拡張する設計が最も自然なインクルージョン施策</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.carlsberggroup.com/newsroom/signs-of-unity-carlsberg-brings-deaf-liverpool-fc-fans-into-matchday-experience-like-never-before/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-5">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop" alt="Clue「Cost of Bleeding」生理の生涯コスト£20,359を可視化し政策提言へ" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">5</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">Clue / イギリス</span>
+            </div>
+            <div class="entry-title">Clue「Cost of Bleeding」生理の生涯コスト£20,359を可視化し政策提言へ</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">生理管理アプリClueが英国で「Cost of Bleeding」キャンペーンを展開。生理の生涯コスト38年間で£20,359という調査結果を発表。放送人 Ashley Jamesを起用し、生理用品無償化を求める請願を開始。署名者全員にClue Plus無料サブスクリプションを提供。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「39%が生活必需品を削って生理用品を購入」「41%が症状で欠勤」という具体的数字が「個人の問題」を「社会的課題」に転換。請願署名と無料サブスクリプションの交換でエンゲージメントとユーザー獲得を同時達成。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>「生涯コスト」の可視化はどの業界でも「無視された負担」をニュース化する強力なPR手法</li>
+<li>「請願署名×無料特典」の交換設計はD2Cブランドのユーザー獲得チャネルとして応用可能</li>
+<li>調査データの「想像を超える数字」がPRのフックになる——生涯費用×万単位の計算は常に話題化する</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.famouscampaigns.com/2026/03/clue-spotlights-the-20k-reality-of-menstruation-with-cost-of-bleeding-campaign/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-6">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&h=400&fit=crop" alt="Airbnb.org「Home Lives On」災害被災者の「家」を再定義するドキュメンタリーシリーズ" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">6</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">Airbnb.org / アメリカ</span>
+            </div>
+            <div class="entry-title">Airbnb.org「Home Lives On」災害被災者の「家」を再定義するドキュメンタリーシリーズ</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Airbnb.orgがR/GAと制作した「Home Lives On」キャンペーンを展開。山火・洪水等の災害で住居を失った3家族の実話をドキュメンタリーフィルム化。緊急住居が「屋根以上の存在」——尊厳・安定・喜びを提供できることを可視化。気候災害の頻発に対応する緊急対応拡充を告知。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「家」というAirbnbのコアコンセプトを「商業宿泊」から「人間の尊厳」へと意味拡張。実話ベースの感情的ストーリーテリングがAdweek等の大手メディアの自発的報道を誘発。非営利部門の活動が本体ブランドの価値を強化する好循環。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>ブランドのコアコンセプトを「社会的意味」に拡張するストーリー設計がCSRとブランディングを同時に達成</li>
+<li>「実話×ドキュメンタリー」は最もメディアが取り上げやすいコンテンツ形式</li>
+<li>非営利部門の活動が本体ブランドを強化する「ハロー効果」を意図的に設計する</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.adweek.com/creativity/airbnborg-shows-what-home-means-after-disaster/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-7">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e?w=600&h=400&fit=crop" alt="Pepsi「Relation-Sips」Z世代の恋愛観を「小さな一口」に訳しリアルイベントを演出" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">7</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">Pepsi / イギリス</span>
+            </div>
+            <div class="entry-title">Pepsi「Relation-Sips」Z世代の恋愛観を「小さな一口」に訳しリアルイベントを演出</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Pepsiが英国・アイルランドで「Relation-Sips」キャンペーンを展開。「77%のZ世代が大げさなジェスチャーより小さな甘い瞬間を好む」という調査を基に、リアルデーティングアプリThursdayと共同で「Love at First Sip」イベントをロンドンで開催。「28 Days of Relation-sips」カードとPepsiカクテルを組み合わせた体験型施策。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">Z世代の「バレンタインデー離れ」というカルチャーシフトをブランドのコア価値（「甘い一口」）に直結。「小さなジェスチャーで見てもらえた83%、大切にされた85%」というデータが「小さくてもいい」という共感を生んだ。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>世代別の価値観シフトをデータで可視化し、ブランドのコア価値と接続する設計が効果的</li>
+<li>デーティングアプリ等の「ターゲット層が集まるプラットフォーム」とのコラボが体験型マーケティングの精度を上げる</li>
+<li>「小さなものでいい」というメッセージはコスト意識の高い時代にブランド好感度を高める</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://lbbonline.com/news/Pepsi-Gen-Z-Relation-Sipping" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-8">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&h=400&fit=crop" alt="Pepsi Max「BetterWithPepsi」食事の「犯罪的習慣」を終わらせるマルチチャネル施策" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">8</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">Pepsi Max / イギリス</span>
+            </div>
+            <div class="entry-title">Pepsi Max「BetterWithPepsi」食事の「犯罪的習慣」を終わらせるマルチチャネル施策</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Pepsi Maxが「#BetterWithPepsi」キャンペーンの最新章を展開。「ソースでベトベトのハンバーガー」「ケチャップまみれのフライ」といった「食事の『犯罪的』習慣」を認めつつ、Pepsiがその混乱を解決すると提案。TV・OOH・SNS・店頭を統合したマルチチャネル施策。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「みんなやってるけど言わない」食事の乱れを「犯罪」とネーミングするユーモアが共感を引き出し、Pepsiを「解決者」にポジショニング。食事シーンへの自然な入り口を作り、飲料の「食事伴走」役割を強化。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>消費者の「言えないけどやってる」行動を「公認」するコミュニケーションがブランド親密感を高める</li>
+<li>食品×飲料のペアリング提案は店頭・デリバリー・メディアを貫いた統合マーケティングに最適</li>
+<li>「見た目は乱れるけど味は最高」という矛盾のユーモアは食品カテゴリーで普遍的に使える</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.talkingretail.com/products-news/soft-drinks/pepsi-max-unveils-its-latest-betterwithpepsi-campaign-16-03-2026/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-9">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop" alt="OpenAI広告事業拡大——ChatGPTスポンサードメッセージを国際展開へ" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">9</span>
+                <span class="category-badge" style="background:#8e44ad">Platform/Policy</span>
+                <span class="brand-country">OpenAI / アメリカ</span>
+            </div>
+            <div class="entry-title">OpenAI広告事業拡大——ChatGPTスポンサードメッセージを国際展開へ</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">OpenAIがChatGPT内のスポンサードメッセージパイロットを4月以降も延長し、国際展開を開始。広告主コミットメントを確保し、フルアドスタック構築に向けて前進。AIチャットボット内での広告配信という新しい広告フォーマットが業界注目を集める。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">広告業界がAIチャットという「新メディア」の可能性に注目する中、OpenAIが自ら広告プラットフォーム化を進める動きは「Google/Metaに次ぐ第3の巨大広告プラットフォーム」としてAd Age等が大きく報道。会話型AIの「意図理解」能力が広告ターゲティングの概念を変える可能性。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>AIチャットボット内広告は「検索広告」の次の進化系として今からテスト予算を確保すべき</li>
+<li>「意図理解型ターゲティング」が広告の新標準になる可能性を踏まえたクリエイティブ設計</li>
+<li>「AIチャットでの広告体験」は従来のバナーとは全く異なるクリエイティブが必要になる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://adage.com/news/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-10">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=600&h=400&fit=crop" alt="adidas×女性アーティスト初のサッカージャージコラボで音楽×スポーツの壁を破壊" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">10</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">adidas / グローバル</span>
+            </div>
+            <div class="entry-title">adidas×女性アーティスト初のサッカージャージコラボで音楽×スポーツの壁を破壊</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">adidasがブランド史上初となる女性ミュージックアーティストとのサッカージャージコラボレーションを発表。音楽・ファッション・スポーツの3領域を交差させたコレクションで、女性スポーツへの注目度上昇とストリートカルチャーの融合を体現。TrendHunterが3月のトップマーケティングトレンドとして選出。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">女性スポーツのメディア露出増加と、音楽アーティストがスポーツウェアを「ファッションアイテム」として着用するトレンドを同時に捉えた。「初」というニュース性がメディア報道を自動生成。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>「ブランド史上初」を作るコラボはそれ自体がニュース価値を持つ</li>
+<li>音楽×スポーツ×ファッションの3領域交差はターゲット層を最大化する</li>
+<li>女性アスリート・アーティストとのコラボは2026年のトレンドとして今後も加速する</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.trendhunter.com/slideshow/march-2026-marketing" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+    </div>
+    <div class="tab-panel" id="panel-domestic">
+
+    <div class="entry" id="entry-11">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1556881286-fc6915169721?w=600&h=400&fit=crop" alt="キッコーマン豆乳×北川景子「実は意外と豆乳も」篧「朝の満たんぱく」新習慣を提案" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">11</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">キッコーマンソイフーズ / 日本</span>
+            </div>
+            <div class="entry-title">キッコーマン豆乳×北川景子「実は意外と豆乳も」篧「朝の満たんぱく」新習慣を提案</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">キッコーマンソイフーズが北川景子を新CMに起用し「実は意外と豆乳も」篧を全国放映開始（3月25日）。「朝の満たんぱく」をコンセプトに、プロテイン摂取を豆乳で行う新習慣を提案。北川は17歳から約20年間豆乳を飲み続けており、真実味のあるブランドアンバサダー起用。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「タンパク質」が健康トレンドのホットワードになる中、豆乳を「プロテイン飲料」として再定義。北川景子の「20年続けている」という実体験が信頼性を担保。「意外と」というコピーが既存ユーザーの「自分もそう」という共感と新規層の「そうなんだ」という気づきを同時に生んだ。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>タレントの「実体験」が商品訴求と直結する起用は信頼性が桁違いに高まる</li>
+<li>「意外と」というフレームが既存カテゴリーの再発見を促す有効なコピー戦略</li>
+<li>健康トレンド×日常飲料の「習慣提案」は新年度のタイミングに最適</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.advertimes.com/20260325/article538455/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-12">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&h=400&fit=crop" alt="三井不動産が初のキャラクターIP製作委員会参画「うそ探偵トマント」TVANIME開始" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">12</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">三井不動産 / サンエックス / 日本</span>
+            </div>
+            <div class="entry-title">三井不動産が初のキャラクターIP製作委員会参画「うそ探偵トマント」TVANIME開始</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">三井不動産がサンエックス（「リラックマ」の会社）の新キャラクターIP「うそ探偵トマント」製作委員会に初参画。3月30日よりZIP!内でTVAnim放送開始。4月18日～20日にはララぽーと豊洲で体験型イベントも開催。不動産デベロッパーがIPビジネスに本格参入。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">不動産会社がキャラクターIPに投資するという「業界初」のニュース性が豊富。ララぽーと等の自社商業施設を「体験型イベント会場」として活用できるシナジーがあり、他のスポンサーが真似できない独自の競争優位を持つ。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>「リアル施設×IP」の掛け算ができる企業はIPビジネスへの参入を検討すべき</li>
+<li>朝の情報番組内アニメはファミリー層への最も自然な接触チャネル</li>
+<li>「かわいい×ミステリー」の新ジャンルはキッズと大人の両方に刺さる</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.mitsuifudosan.co.jp/corporate/news/2026/0324_01/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-13">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop" alt="ファミマ「コンビニエンスウェア」5周年初のTVCM——100人キャスト×千葉雄喜「上を向いて歩こう」" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">13</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">ファミリーマート / 日本</span>
+            </div>
+            <div class="entry-title">ファミマ「コンビニエンスウェア」5周年初のTVCM——100人キャスト×千葉雄喜「上を向いて歩こう」</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">ファミリーマートのオリジナルアパレルブランド「コンビニエンスウェア」が5周年を記念し、ブランド史上初のTVCMを放映。CD落合宏理、監督田中裕介、スタイリスト北村道子、音楽千葉雄喜（「上を向いて歩こう」カバー）というトップクリエイター陣。100人以上のキャストが日常のロケーションで着用。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「コンビニで服を買う文化」を創造したブランドの5周年記念という「節目」がニュース価値を生んだ。坂本九の名曲を千葉雄喜がカバーする意外性がHypebeast・WWDJAPAN等の幅広いメディアで報道。「普遍性と多様性」を体現する100人キャストがブランドのポジショニングを明確化。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>「周年記念×初のTVCM」の組み合わせは複数のニュースフックを同時に生む</li>
+<li>「名曲カバー×意外なアーティスト」は世代を超えた話題化の鉄板公式</li>
+<li>「100人が着る」規模感がブランドの普遍性を視覚的に証明する</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.family.co.jp/company/news_releases/2026/20260212_01.html" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-14">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1563636619-e9143da7973b?w=600&h=400&fit=crop" alt="よつ葉乳業「よつ葉のある暮らし」カテゴリー横断ブランディングで「乳製品まわりはよつ葉」を狙う" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">14</span>
+                <span class="category-badge" style="background:#2980b9">Brand Moves</span>
+                <span class="brand-country">よつ葉乳業 / 日本</span>
+            </div>
+            <div class="entry-title">よつ葉乳業「よつ葉のある暮らし」カテゴリー横断ブランディングで「乳製品まわりはよつ葉」を狙う</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">よつ葉乳業が2026年度上期に家庭用商品のブランド戦略を全面転換。「よつ葉のある暮らし」をコミュニケーションテーマに、牛乳・バター・ヨーグルト・チーズを同一広告フレームで展開。「北海道十勝生乳100ヨーグルト」シリーズのデザインも刷新し、「よつ葉」ロゴを大きく展開。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">新商品単発訴求から「カテゴリー横断ブランディング」への転換は、「乳製品まわりはよつ葉」という想起形成を加速。北海道ブランドの信頼感と、統一デザインによる売場での視認性向上が有機的に連動。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>カテゴリー横断ブランディングは「新商品単発」より中長期的なブランド資産を築く</li>
+<li>「地域名（北海道・十勝）×ブランド」の組み合わせは信頼感と差別化を同時達成</li>
+<li>パッケージデザインの統一は売場での「ブランド羽」効果を生む</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.advertimes.com/20260326/article538580/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-15">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1567427018141-0584cfcbf1b8?w=600&h=400&fit=crop" alt="電通・田中直基が「クリエイター・オブ・ザ・イヤー2025」受賞——日本広告最高峰" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">15</span>
+                <span class="category-badge" style="background:#f39c12">Awards</span>
+                <span class="brand-country">電通 / JAAA / 日本</span>
+            </div>
+            <div class="entry-title">電通・田中直基が「クリエイター・オブ・ザ・イヤー2025」受賞——日本広告最高峰</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">日本広告業協会（JAAA）が「2025年クリエイター・オブ・ザ・イヤー賞」の受賞者を発表。電通 zero/Dentsu Lab Tokyoのエグゼクティブクリエイティブディレクター田中直基氏が最高賞を受賞。メダリスト9名も同時発表。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">日本広告業界の最高栄誉の一つであり、受賞者の仕事が業界全体のクリエイティブ基準を示す指標となる。Dentsu Lab Tokyoからの受賞は「テクノロジー×クリエイティブ」の融合が2025年のトレンドだったことを象徴。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>「テクノロジー×クリエイティブ」の融合が日本の広告賞でも最高評価の流れ</li>
+<li>クリエイター個人の受賞はPRとして組織のリクルートブランディングに活用できる</li>
+<li>「メダリスト」一覧から次世代クリエイティブ人材のトレンドを読み取る</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.dentsu.co.jp/news/release/2026/0324-011018.html" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-16">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=600&h=400&fit=crop" alt="「推し活のデザイン展」GOOD DESIGN Marunouchiで開幕——ファン文化をデザイン視点で再定義" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">16</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">日本デザイン振興会 / 日本</span>
+            </div>
+            <div class="entry-title">「推し活のデザイン展」GOOD DESIGN Marunouchiで開幕——ファン文化をデザイン視点で再定義</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">日本デザイン振興会が東京・丸の内GOOD DESIGN Marunouchiで「推し活のデザイン展」を開催（3月28日～4月26日）。うちわ、痛バッグ、応援広告等の推し活グッズを「デザイン思考の結晶」として展示。WHITE SCORPIONがアンバサダー就任。音声ガイドも提供。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「推し活」を「消費行動」ではなく「デザイン思考」として再定義した点が新しい。GOOD DESIGNという権威ある場での展示がファン文化に「社会的正当性」を付与。アイドルグループをアンバサダーに起用し、ターゲット層の来場を促進。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>サブカルチャーを「デザイン」「アート」文脈で展示すると新規層の関心を獲得できる</li>
+<li>「推し活グッズ」の創意工夫は企業の商品開発やパッケージングにもヒントが満載</li>
+<li>アイドルグループのアンバサダー起用が展示会の集客チャネルとして機能する</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.jidp.or.jp/2026/03/18/ExhibitionSelection2026" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-17">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?w=600&h=400&fit=crop" alt="「ぽこ あ ポケモン」松村北斗×指原莉乃×狩野英孝のNintendo Switch 2ソフトCMが好感度上位" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">17</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">株式会社ポケモン / Nintendo / 日本</span>
+            </div>
+            <div class="entry-title">「ぽこ あ ポケモン」松村北斗×指原莉乃×狩野英孝のNintendo Switch 2ソフトCMが好感度上位</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">Nintendo Switch 2ソフト「ぽこ あ ポケモン」のTVCMが3月前期のCM好感度調査で上位にランクイン。松村北斗・指原莉乃・MAHINA・狩野英孝の4人が協力して街作りを楽しむ様子を描き、ゲームの「みんなで作る楽しさ」を訴求。CM総合研究所の3月前期「商品にひかれた」部門でトップ圈。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">ポケモン30周年の話題性とSwitch 2の期待感が重なり、大型タレント起用のCMが幅広い世代で好感度を獲得。「協力プレイ」というゲームのコア価値をタレントのかけ合いで表現した点が巧み。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>「タレント同士のかけ合い」が商品のコア体験を体現するキャスティング設計</li>
+<li>アニバーサリー×新ハードのタイミングを掴えたCM展開が話題を最大化</li>
+<li>幅広い世代にリーチするには「商品にひかれた」軸でのCM設計が最も効果的</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://gamebiz.jp/news/420944" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-18">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&h=400&fit=crop" alt="メディキューブ×目黒蓮が「CM好感度」急上昇——K-POPアイドル×コスメの新公式" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">18</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">メディキューブ / 日本</span>
+            </div>
+            <div class="entry-title">メディキューブ×目黒蓮が「CM好感度」急上昇——K-POPアイドル×コスメの新公式</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">韓国発スキンケアブランド「メディキューブ」が目黒蓮を起用したCMが3月前期のCM好感度調査で急上昇。K-POPアイドルのビジュアルとコスメブランドの親和性が若年層を中心に強い反応を獲得。CM総合研究所の関東圈3,000モニター調査でトップ圈にランクイン。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「K-POPアイドル×コスメ」の組み合わせは「憧れの人が使っている」という最も強力な購買動機を生む。SNSでのファン拡散がテレビCMと相乗し、認知度が急速に拡大。韓国ビューティートレンドを日本市場に持ち込む「橋渡し」としてK-POPタレントが機能。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>K-POPアイドル起用は若年層への急速な認知拡大に最も効率的な投資</li>
+<li>「ビューティー×アイドル」は「憧れ」購買動機を直接刺激しCM好感度と購買意向を同時に高める</li>
+<li>海外ブランドの日本展開にはK-POPタレントが「文化的橋渡し」として機能する</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.cmdb.jp/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-19">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1542779283-429940ce8336?w=600&h=400&fit=crop" alt="ポケモン30周年→1,000種以上の固有ロゴがファンのノスタルジア投稿を爆発的に誘発" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">19</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">株式会社ポケモン / 日本</span>
+            </div>
+            <div class="entry-title">ポケモン30周年→1,000種以上の固有ロゴがファンのノスタルジア投稿を爆発的に誘発</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">ポケモン30周年記念として　1,000種以上のポケモンそれぞれに固有のロゴを作成し公開。SNS上で「自分の推しポケモンのロゴ」を探してシェアする動きが世界的に拡散。TrendHunterが3月のトップポップカルチャートレンドとして選出。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「1,000種以上」という圧倒的な数が「全員に探す楽しみ」を生んだ。ファンが自発的に「探す・見つける・シェアする」行動をとる設計がオーガニック拡散を自動生成。30年の感情的蓄積がノスタルジアを刺激し、世代を超えた参加を促進。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>「全員に探す楽しみがある」設計がファンの自発的UGCを最大化する</li>
+<li>アニバーサリー記念は「新商品」より「既存資産の再解釈」の方がファンの感情を動かす</li>
+<li>「ノスタルジア×個別化」の組み合わせはSNS時代の最強のファンエンゲージメント設計</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.trendhunter.com/slideshow/march-2026-marketing" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+
+    <div class="entry" id="entry-20">
+        <img class="entry-hero" src="https://images.unsplash.com/photo-1619881590738-a111d176d936?w=600&h=400&fit=crop" alt="マックポーク×多部未華子・梶裕貴「CM好感度3月前期1位」会話劇CMが全世代を席巻" onerror="this.style.display='none'">
+        <div class="entry-body">
+            <div class="entry-meta">
+                <span class="entry-number">20</span>
+                <span class="category-badge" style="background:#e74c3c">Buzz</span>
+                <span class="brand-country">日本マクドナルド / 日本</span>
+            </div>
+            <div class="entry-title">マックポーク×多部未華子・梶裕貴「CM好感度3月前期1位」会話劇CMが全世代を席巻</div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">何が起きたか</div>
+                <div class="entry-section-text">日本マクドナルドの「マックポーク」CMが3月前期のCM好感度調査（CM総合研究所・関東圈3,000モニター）で1位を獲得。多部未華子と声優・梶裕貴の「会話劇」形式で、商品のおいしさを自然な会話の中で伝える構成が全世代で好評。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">なぜ効いたか</div>
+                <div class="entry-section-text">「会話劇」形式は商品訴求を自然に埋め込みつつ触感を维持できる最も効率的なCM構成。多部未華子の親しみやすさと梶裕貴の声の魅力が視聴者の共感を引き出し、食欲訴求とブランド好感度を同時に上昇させた。</div>
+            </div>
+
+            <div class="entry-section">
+                <div class="entry-section-label">真似できる要素</div>
+                <ul class="actionable-list">
+                    <li>「会話劇」形式CMは商品説明を自然に織り込みつつ共感を生む最適構成</li>
+<li>「俳優×声優」の組み合わせは視覚と聴覚の両方で記憶に残りやすい</li>
+<li>食品CMは「商品にひかれた」を最優先KPIにすると購買意向との相関が高い</li>
+
+                </ul>
+            </div>
+
+            <a class="source-link" href="https://www.cmdb.jp/" target="_blank">ソースを読む →</a>
+        </div>
+    </div>
+    </div>
+    <div class="tab-panel" id="panel-awards">
+        <div class="awards-tier-section">
+            <div class="awards-tier-label" style="font-size:1rem;border-bottom:2px solid #233554;padding-bottom:10px;margin-bottom:16px">🇯🇵 国内の広告賞</div>
+        </div>
+        <div class="awards-tier-section">
+            <div class="awards-tier-label" style="font-size:1rem;border-bottom:2px solid #233554;padding-bottom:10px;margin-bottom:16px">🌍 海外の広告賞</div>
+        </div>
+    </div>
+    <div class="tab-panel" id="panel-bonus">
+
+    <div class="bonus">
+        <div class="bonus-title">アサヒ飲料 / カルピス — カルピス×長澤まさみ「20年以上継続」——タレント長期起用の最強事例</div>
+        <div class="bonus-summary"></div>
+    </div>
+
+    <div class="bonus">
+        <div class="bonus-title">Dove — Dove「Hot Like Us」グラミー賞で2000年代ノスタルジアを吹き込む</div>
+        <div class="bonus-summary"></div>
+    </div>
+
+    <div class="bonus">
+        <div class="bonus-title">Ray-Ban — Ray-BanがK-POPカルチャーを活用しタグローバル展開</div>
+        <div class="bonus-summary"></div>
+    </div>
+    </div>
+
+    <div class="footer">
+        Generated on 2026-03-29 09:55 | Creative Director's Daily Brief
+    </div>
+</div>
+<script>
+(function() {
+    var tabs = document.querySelectorAll('.tab');
+    var panels = document.querySelectorAll('.tab-panel');
+    tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            var target = this.getAttribute('data-tab');
+            tabs.forEach(function(t) { t.classList.remove('active'); });
+            panels.forEach(function(p) { p.classList.remove('active'); });
+            this.classList.add('active');
+            var panel = document.getElementById('panel-' + target);
+            if (panel) panel.classList.add('active');
+        });
+    });
+    // URLハッシュからエントリにジャンプ時、対応タブを自動表示
+    function activateByHash() {
+        var hash = window.location.hash;
+        if (!hash) return;
+        var el = document.querySelector(hash);
+        if (!el) return;
+        var panel = el.closest('.tab-panel');
+        if (!panel) return;
+        var panelId = panel.id.replace('panel-', '');
+        tabs.forEach(function(t) { t.classList.remove('active'); });
+        panels.forEach(function(p) { p.classList.remove('active'); });
+        panel.classList.add('active');
+        tabs.forEach(function(t) {
+            if (t.getAttribute('data-tab') === panelId) t.classList.add('active');
+        });
+        setTimeout(function() { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+    }
+    activateByHash();
+    window.addEventListener('hashchange', activateByHash);
+})();
+</script>
+</body>
+</html>
